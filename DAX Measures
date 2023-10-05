@@ -1,0 +1,60 @@
+Relevant DAX Measures:
+-----------------------------------------------------------------------------------------------------------------------------
+% of Sales = 
+DIVIDE(
+    SUM(Sales[Sales]), 
+    CALCULATE(SUM(Sales[Sales]), ALL(Sales))
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Avg Sales per Product = 
+AVERAGEX(
+    'Product',
+    CALCULATE(
+        SUM('Sales'[Sales])
+    )
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Prior Year Cost = 
+CALCULATE(
+    SUM('Sales'[Sales]) + SUM('Sales'[Profit]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Prior Year PR = 
+CALCULATE(
+    SUM('Sales'[Profit]) / SUM('Sales'[Sales]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Prior Year Profit = 
+CALCULATE(
+    SUM(Sales[Profit]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Prior Year Sales = 
+CALCULATE(
+    SUM(Sales[Sales]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+YoY Sales Growth % = 
+VAR CurrentYearSales = CALCULATE(
+    SUM('Sales'[Sales]),
+    FILTER(
+        ALL('Date'),
+        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
+    )
+)
+-----------------------------------------------------------------------------------------------------------------------------
+VAR PriorYearSales = CALCULATE(
+    SUM('Sales'[Sales]),
+    FILTER(
+        ALL('Date'),
+        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date])) - 1
+    )
+)
+
+RETURN
+    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales)
+-----------------------------------------------------------------------------------------------------------------------------
