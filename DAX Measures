@@ -46,7 +46,6 @@ VAR CurrentYearSales = CALCULATE(
         YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
     )
 )
------------------------------------------------------------------------------------------------------------------------------
 VAR PriorYearSales = CALCULATE(
     SUM('Sales'[Sales]),
     FILTER(
