@@ -1,6 +1,8 @@
 # SuperStore-Sales-Analysis-Report-Power-BI
 
-<img width="943" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/114441fa-5ae5-4d60-98da-170ea65d7d53">
+<img width="886" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/0303febd-954e-4b2c-bae3-6670fa719eb3">
+
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/a893c0a3-196b-4ed9-a4f8-c16b0972330b">
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4357eee5-5b04-4f1b-a14a-bbf730d0ed7f">
 
