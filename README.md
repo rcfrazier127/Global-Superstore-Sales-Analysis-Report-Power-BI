@@ -1,19 +1,17 @@
 # SuperStore-Sales-Analysis-Report-Power-BI
 
-![Data Model](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/5a8bc772-8484-4767-87eb-c249b0656de1)
+<img width="943" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/114441fa-5ae5-4d60-98da-170ea65d7d53">
 
-![Title Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/f44fe4cc-ef67-45a3-837f-8e00e52ece30)
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4357eee5-5b04-4f1b-a14a-bbf730d0ed7f">
 
-![Screenshot - Summary](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/e58a1c0e-85e3-40aa-90ca-436261d7302a)
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/e4696209-d000-4fa7-8300-d6e31c8e8dcd">
 
-![Sales Analysis Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/c4484fac-ef12-42aa-84e3-3ba7ab513ee6)
+<img width="1574" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c946166f-d3b5-412c-b0d6-15d636bd6d97">
 
-![Product Analysis Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/2822bac9-97a6-43da-9b5f-e72ec356a35f)
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/e19ce458-c885-4a10-a94b-fac1fec71c60">
 
-![Shipping Analysis Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/f1bc45bd-f727-4088-83b8-0c4aa695650c)
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/1e3a7827-be7c-4436-be7d-11fbe04be355">
 
-![Profit Loss Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/18c3df09-6ea3-4b75-aed7-0a0b1b2873f6)
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/cc68b395-2e7e-4c86-aae5-b763390d56b6">
 
-![Forecast Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/ba6ac7e0-07ea-40a8-87bb-0b20db8feb6c)
-
-![Geographic Map Page Screenshot](https://github.com/rcfrazier127/SuperStore-Sales-Analysis-Report-Power-BI/assets/63532077/63d5c750-1660-47b4-a8cf-b7a737d93223)
+<img width="1574" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/5dfa2591-00c4-4242-a245-e00b8971cf49">
