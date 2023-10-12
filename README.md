@@ -34,6 +34,7 @@ An introduction to the report with a brief description of its purpose. This page
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c2d2ab13-3b7b-4133-9989-c44612de6073">
 
+
 ### Summary
 
 Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, sales % growth, and product profit ratios are showcased. In each page of this report, there is included slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Region, Customer Segment, Year, and Quarter. There is also a slicer reset button on the top right of each page.
