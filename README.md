@@ -6,6 +6,8 @@ This Sales Analysis and Forecasting report is designed to provide a comprehensiv
 
 **Data Preparation**
 
+<img width="855" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/56eb37a5-5662-4dff-bb26-480c1988fbc3">
+
 <img width="841" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/2257799d-eb07-4e89-b3f8-5c0c1fb99573">
 
 **Data Model**
