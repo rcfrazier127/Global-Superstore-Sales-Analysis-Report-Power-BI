@@ -12,8 +12,6 @@ Data format parsing fix with Python:
 
 <img width="375" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/4dbe322e-93dc-453a-a677-52aca7ad5792">
 
-
-
 These are the columns in the Power Query Editor after the fix took place:
 
 <img width="841" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/2257799d-eb07-4e89-b3f8-5c0c1fb99573">
@@ -21,6 +19,8 @@ These are the columns in the Power Query Editor after the fix took place:
 The column profiling shows no instance of errors and all data within the dataset is 100% valid with no blanks, mismatches, or irrelevant data.
 
 **Data Model**
+
+A simple Star Schema format was used to model the data in Power BI. A separate measures table is included.
 
 <img width="889" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/076e712f-7a8a-4dbc-932f-09490438baf7">
 
