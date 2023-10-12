@@ -24,7 +24,7 @@ A simple Star Schema format was used to model the data in Power BI. This model c
 
 <img width="889" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/076e712f-7a8a-4dbc-932f-09490438baf7">
 
-### Report Pages
+## Report Pages
 
 The Global Superstore Sales Analysis and Forecasting Report consists of the following pages:
 
@@ -79,6 +79,6 @@ A geospatial overview displaying sales, product, cost, shipping data, and profit
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/d7a0e768-8285-4a3c-b0a7-5431c5eabae2">
 
-### Future Works
+## Future Works
 
 Currently in production is a customer details page featuring graphical and tabular customer data including an analysis of customer lifetime value and churn rates.
