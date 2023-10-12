@@ -1,4 +1,4 @@
-# Global Superstore Sales Analysis and Forecasting Report in Power BI
+<span style="font-size: 24px;"> Global Superstore Sales Analysis and Forecasting Report in Power BI </span>
 
 Introduction
 
