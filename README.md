@@ -40,13 +40,17 @@ The Global Superstore Sales Analysis and Forecasting Report consists of the foll
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/a96328d9-f0f5-42c0-96f7-0a3be73c24e4">
 
-""Product Analysis:** Shows information about individual product performance and profitability. This page features tabular and graphical product data and a decompositon tree visual whicn provides an interactive detailed view of individual product performance by category all the way down to the individual cities that a specific product is being sold in. The scatter plot on the product page allows for the quick identification of outliers to address product profitability opportunities.
+**Product Analysis:** Shows information about individual product performance and profitability. This page features tabular and graphical product data and a decompositon tree visual whicn provides an interactive detailed view of individual product performance by category all the way down to the individual cities that a specific product is being sold in. The scatter plot on the product page allows for the quick identification of outliers to address product profitability opportunities.
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7e08bc64-2e4d-474f-8353-cb4e5e521a45">
 
-**Shipping Analysis:**
+**Shipping Analysis:** Provides a view of shipping cost and order volume by market divisions and shipping mode. The scatter plot allows for identification of product outliers by total units shipped and total shipping cost. This page also displays trend lines for monthly order volumes by shipping mode. 
+
+I wanted this page to feature a more detailed view of lead times by markets, countries, and shipping mode, but due to how the data was generated in the creation of this public dataset, each of these totals amount to the same exact values across each value within the market, country, and shipping mode columns. If this were not so, then there possibly would have been an opportunity to create an additional page that extended the analysis of shipping data, thus providing the level of detail that I originally intended for this project. 
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/780fda37-1db6-440a-a35d-e651e28f3b1f">
+
+
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/ee015b70-c851-4225-8e2d-1c20f50f3b54">
 
