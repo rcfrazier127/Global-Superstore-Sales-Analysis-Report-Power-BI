@@ -1,6 +1,6 @@
-<span style="font-size: 24px;"> Global Superstore Sales Analysis and Forecasting Report in Power BI </span>
+# Global Superstore Sales Analysis and Forecasting Report in Power BI
 
-Introduction
+**Introduction**
 
 This Sales Analysis and Forecasting report is designed to provide a comprehensive overview of sales data, product performance, shipping analysis, profit vs loss, and predictive analytics for future sales.
 
