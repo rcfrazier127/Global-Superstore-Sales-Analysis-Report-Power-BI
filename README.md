@@ -32,15 +32,19 @@ The Global Superstore Sales Analysis and Forecasting Report consists of the foll
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c2d2ab13-3b7b-4133-9989-c44612de6073">
 
-**Summary:** Provides a high-level overview of sales, customer, product, and metrics data. TopN countries, customers, and products by sales, sales % growth, and profit ratio are showcased. In each page of this report, there is included slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Region, Customer Segment, Year, and Quarter. There is also a slicer and filter reset button on the top right of each page. THe Summary Page is the only page that also includes a slicer to filter data by Market, which is the primary data focal point in many of the pages within this report. 
+**Summary:** Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, sales % growth, and product profit ratios are showcased. In each page of this report, there is included slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Region, Customer Segment, Year, and Quarter. There is also a slicer reset button on the top right of each page.
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/1704df7c-199f-4eb1-bb8b-a4db7d3b1287">
 
-**Sales Analysis:** 
+**Sales Analysis:** Provides a detailed view of sales insights, growth rates, and pertinent sales performance metrics in a tablular and graphical view.
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/a96328d9-f0f5-42c0-96f7-0a3be73c24e4">
 
+""Product Analysis:** Shows information about individual product performance and profitability. This page features tabular and graphical product data and a decompositon tree visual whicn provides an interactive detailed view of individual product performance by category all the way down to the individual cities that a specific product is being sold in. The scatter plot on the product page allows for the quick identification of outliers to address product profitability opportunities.
+
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7e08bc64-2e4d-474f-8353-cb4e5e521a45">
+
+**Shipping Analysis:**
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/780fda37-1db6-440a-a35d-e651e28f3b1f">
 
