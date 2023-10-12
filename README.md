@@ -23,7 +23,9 @@ The column profiling shows no instance of errors and all data within the dataset
 A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. A separate measures table is also included.
 
 <img width="889" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/076e712f-7a8a-4dbc-932f-09490438baf7">
+
 </br>
+
 **Report Pages**
 
 The Global Superstore Sales Analysis and Forecasting Report consists of the following pages:
