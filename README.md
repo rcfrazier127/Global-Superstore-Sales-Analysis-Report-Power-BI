@@ -8,9 +8,10 @@ This Sales Analysis and Forecasting report is designed to provide a comprehensiv
 
 The Global Superstore Dataset did not require extensive preparation, aside from standardization of formatting and removal of irrelevant columns. However, the formatting for the "Order Date" and "Shipping Date" columns were a mixture of 'dd-mm-yyyy' and 'mm-dd-yyyy' formats. For whatever reason there was no way to standardize these date formats into one single format in Excel. This required a simple fix of re-parsing the data format using Python. The file displaying this fix is attached within this repository. 
 
-Data format persing fix with Python:
+Data format parsing fix with Python:
 
 <img width="375" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/4dbe322e-93dc-453a-a677-52aca7ad5792">
+
 
 
 These are the columns in the Power Query Editor after the fix took place:
