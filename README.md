@@ -1,4 +1,4 @@
-# SuperStore-Sales-Analysis-Report-in Power-BI
+# SuperStore-Sales-Analysis-and Forecasting Report-in Power-BI
 
 Introduction
 
