@@ -12,7 +12,7 @@ The Global Superstore Dataset did not require extensive preparation, aside from 
 
 <img width="375" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/4dbe322e-93dc-453a-a677-52aca7ad5792">
 
-*These are the columns in the Power Query Editor after the fix:*
+*Columns in Power Query Editor after fix:*
 
 <img width="841" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/2257799d-eb07-4e89-b3f8-5c0c1fb99573">
 
