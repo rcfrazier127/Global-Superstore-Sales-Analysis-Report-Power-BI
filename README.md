@@ -32,8 +32,7 @@ The Global Superstore Sales Analysis and Forecasting Report consists of the foll
 
 An introduction to the report with a brief description of its purpose. This page includes interactive buttons that bring the user to the corresponding report pages.
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c2d2ab13-3b7b-4133-9989-c44612de6073">
-
+<img width="1545" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/0e027dc0-6347-4272-9e30-a8a7f55b01ee">
 
 ### Summary
 
