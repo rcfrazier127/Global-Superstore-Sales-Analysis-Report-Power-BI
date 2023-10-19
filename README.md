@@ -48,7 +48,7 @@ Provides a detailed view of sales insights, growth rates, and pertinent sales pe
 
 ### Product Performance
 
-Shows information about individual product performance and profitability. This page features tabular and graphical product data and a decompositon tree visual which provides an interactive detailed view of individual product performance by category all the way down to the individual cities that a specific product is being sold in. The scatter plot on the product page allows for the quick identification of excelling or underperforming products
+Shows information about individual product performance and profitability. This page features tabular and graphical product data, product category time-series analyses, and a scatter plot visual which allows for the quick identification of excelling or underperforming products.
 
 <img width="1545" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/07b9d5d1-804a-4d91-8752-2ecc84cf87d1">
 
