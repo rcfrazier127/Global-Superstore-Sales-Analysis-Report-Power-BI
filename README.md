@@ -67,6 +67,12 @@ An overview of profit margins and cost analysis. Displays time series trends and
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/ee015b70-c851-4225-8e2d-1c20f50f3b54">
 
+### Sales Decomposition
+
+The decomposition visual in this report page allows for deeper ad-hoc analysis and enables users to conduct root cause analysis across mutliple dimensions. 
+
+<img width="1545" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report/assets/63532077/c75a6aec-454c-47ad-8b53-8ee0156403de">
+
 ### Forecasting
 
 Provides predictive analytics based on future sales and profit. Displays historical sales data to compare previous trends to forecasted sales values.
