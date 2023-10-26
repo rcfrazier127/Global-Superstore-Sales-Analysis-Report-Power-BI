@@ -36,19 +36,19 @@ An introduction to the report with a brief description of its purpose. This page
 
 ### Summary
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b599c538-37bc-4385-b5f4-79f19a607163">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/82c4e5ca-965a-42bf-b9bf-194f023c5c7b">
 
 Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, sales % growth, and product profit ratios are showcased. In each page of this report, there is included slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Region, Customer Segment, Year, and Quarter. There is also a slicer reset button on the top right of each page.
 
 ### Sales Analysis
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/672eee2e-d038-4c6a-b7cd-ee1225c90037">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/6d4dd347-1c0b-45d1-b4b6-9e309e8858b2">
 
 Provides a detailed view of sales insights, growth rates, and pertinent sales performance metrics in a tablular and graphical view.
 
 ### Product Performance
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/46ec5dd5-d662-439b-b865-479d3cac3eb2">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/57516faf-b9df-4304-becd-7b3edd397007">
 
 Shows information about individual product performance and profitability. This page features tabular and graphical product data, product category time-series analyses, and a scatter plot visual which allows for the quick identification of excelling or underperforming products.
 
@@ -62,7 +62,7 @@ I wanted this page to feature a more detailed view of lead times by markets, cou
 
 ### Profit vs. Loss
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/fa5e8269-057c-4e06-9f1f-630098ac8d97">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7346354d-405d-41e0-afc4-b3f1aeaa29b8">
 
 An overview of profit margins and cost analysis. Displays time series trends and monthly sales/cost comparisons. Featured in this report page is a waterfall chart displays a breakdown of monthly costs by market.
 
