@@ -20,9 +20,9 @@ The column profiling shows no instance of errors and all data within the dataset
 
 ### Data Model
 
-<img width="894" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/a207d482-2b3c-4193-9112-04f1da964681">
+<img width="1144" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/b1b461da-34b3-46ff-8e45-9e75eabe95ea">
 
-A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. A separate measures table is also included.
+A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures and KPI card measures tables are also included.
 
 ## Report Pages
 
