@@ -14,6 +14,8 @@ Arrows For Shipping Cost = IF([Shipping Cost Variance %]<0, UNICHAR(9660), IF([S
 
 Arrows For Units = IF([Units Sold Variance %]<0, UNICHAR(9660), IF([Units Sold Variance %]>0, UNICHAR(9650)))
 -----------------------------------------------------------------------------------------------------------------------------
+Card Text = "From LY"
+-----------------------------------------------------------------------------------------------------------------------------
 Cost Variance % = 
 VAR CurrentYearCost = 'Sales Measures'[Total Cost]
 VAR PriorYearCost = 'Sales Measures'[Prior Year Cost]
