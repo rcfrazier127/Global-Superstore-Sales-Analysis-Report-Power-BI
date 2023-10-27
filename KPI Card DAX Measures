@@ -1,0 +1,32 @@
+*** KPI Card DAX Measures ***
+-----------------------------------------------------------------------------------------------------------------------------
+KPI Arrows:
+
+Arrows For Cost = IF([Cost Variance %]<0, UNICHAR(9660), IF([Cost Variance %]>0, UNICHAR(9650)))
+
+Arrows For PR = IF([PR Variance %]<0, UNICHAR(9660), IF([PR Variance %]>0, UNICHAR(9650)))
+
+Arrows For Profit = IF([Profit Variance %]<0, UNICHAR(9660), IF([Profit Variance %]>0, UNICHAR(9650)))
+
+Arrows For Sales = IF([Sales Variance %]<0, UNICHAR(9660), IF([Sales Variance %]>0, UNICHAR(9650)))
+
+Arrows For Shipping Cost = IF([Shipping Cost Variance %]<0, UNICHAR(9660), IF([Shipping Cost Variance %]>0, UNICHAR(9650)))
+
+Arrows For Units = IF([Units Sold Variance %]<0, UNICHAR(9660), IF([Units Sold Variance %]>0, UNICHAR(9650)))
+-----------------------------------------------------------------------------------------------------------------------------
+Cost Variance % = 
+VAR CurrentYearCost = 'Sales Measures'[Total Cost]
+VAR PriorYearCost = 'Sales Measures'[Prior Year Cost]
+
+RETURN
+IF(ISBLANK(PriorYearCost), BLANK(),
+    DIVIDE(CurrentYearCost - PriorYearCost, PriorYearCost, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+PR Variance % = 
+VAR CurrentYearPR = 'Sales Measures'[Profit Ratio]
+VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
+
+RETURN
+IF(ISBLANK(PriorYearPR), BLANK(),
+    DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
