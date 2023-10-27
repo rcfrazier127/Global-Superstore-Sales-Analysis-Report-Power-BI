@@ -36,35 +36,35 @@ An introduction to the report with a brief description of its purpose. This page
 
 ### Summary
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/82c4e5ca-965a-42bf-b9bf-194f023c5c7b">
+<img width="1531" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/5e6bbd1c-ecc7-44b6-a70b-8b7dad1b2435">
 
-Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, sales % growth, and product profit ratios are showcased. In each page of this report, there is included slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Region, Customer Segment, Year, and Quarter. There is also a slicer reset button on the top right of each page.
+Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, Year, and Quarter. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
 
 ### Sales Analysis
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/6d4dd347-1c0b-45d1-b4b6-9e309e8858b2">
+<img width="1531" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/ddad9d27-5f83-4116-8787-e4581fcbcf76">
 
 Provides a detailed view of sales insights, growth rates, and pertinent sales performance metrics in a tablular and graphical view.
 
 ### Product Performance
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/57516faf-b9df-4304-becd-7b3edd397007">
+<img width="1531" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/28e68458-5032-4f0c-9f40-cfe96e5709df">
 
 Shows information about individual product performance and profitability. This page features tabular and graphical product data, product category time-series analyses, and a scatter plot visual which allows for the quick identification of excelling or underperforming products.
 
 ### Shipping Analysis
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b4fc046d-4571-45df-b5fe-578b3faea86a">
+<img width="1531" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/83699821-f6dc-4524-9e62-e274516f2093">
 
-Provides a view of shipping cost and order volume by market divisions and shipping mode. The scatter plot allows for identification of product outliers by total units shipped and total shipping cost. This page also displays trend lines for monthly order volumes by shipping mode. 
+Provides a view of shipping cost and order volume by market divisions, country, and shipping mode. The scatter plot allows for identification of product outliers by total units shipped and total shipping cost. This page also displays time series analyses for monthly order volumes.
 
 I wanted this page to feature a more detailed view of lead times by markets, countries, and shipping mode, but due to how the data was generated in the creation of this public dataset, each of these totals amount to the same exact values across each value within the market, country, and shipping mode columns. If this were not so, then there possibly would have been an opportunity to create an additional page that extended the analysis of shipping data, thus providing the level of detail that I originally intended for this project.
 
 ### Profit vs. Loss
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7346354d-405d-41e0-afc4-b3f1aeaa29b8">
+<img width="1532" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/a24a7fe5-12af-463a-be3d-cbff985a3358">
 
-An overview of profit margins and cost analysis. Displays time series trends and monthly sales/cost comparisons. Featured in this report page is a waterfall chart displays a breakdown of monthly costs by market.
+An overview of profit margins and cost analysis. Displays time series trends and monthly profit/cost comparisons. Featured in this report page is a waterfall chart displays a breakdown of monthly costs by market.
 
 ### Sales Insights
 
@@ -74,9 +74,9 @@ The decomposition visual in this report page allows for deeper ad-hoc analysis a
 
 ### Forecasting
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Superstore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/349c9742-940e-4070-aec1-1146b195d401">
+<img width="1531" alt="image" src="https://github.com/rcfrazier127/Global-Superstore-Sales-Analysis-Report-Power-BI/assets/63532077/f508f124-4959-4bed-9e65-a36bffb65b8a">
 
-Provides predictive analytics based on future sales and profit. Displays historical sales data to compare previous trends to forecasted sales values.
+Provides predictive analytics based on future sales and profit. Displays historical sales data to compare previous trends to forecasted sales values. The Yearly Sales Trend visual includes a slicer to filter by sales year only for this visual.
 
 ### Geographic Map
 
