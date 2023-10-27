@@ -1,4 +1,4 @@
-*** KPI Card DAX Measures ***
+KPI Card DAX Measures
 -----------------------------------------------------------------------------------------------------------------------------
 KPI Arrows:
 
@@ -30,3 +30,41 @@ VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
 RETURN
 IF(ISBLANK(PriorYearPR), BLANK(),
     DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Profit Variance % = 
+VAR CurrentYearProfit = SUM('Sales'[Profit])
+VAR PriorYearProfit = 'Sales Measures'[Prior Year Profit]
+
+RETURN
+IF(ISBLANK(PriorYearProfit), BLANK(),
+    DIVIDE(CurrentYearProfit - PriorYearProfit, PriorYearProfit, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Sales Variance % = 
+VAR CurrentYearSales = SUM('Sales'[Sales])
+VAR PriorYearSales = 'Sales Measures'[Prior Year Sales]
+
+RETURN
+IF(ISBLANK(PriorYearSales), BLANK(),
+    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Shipping Cost Variance % = 
+VAR CurrentYearShippingCost = SUM('Sales'[Shipping Cost])
+VAR PriorYearShippingCost = 'Sales Measures'[Prior Year Shipping Cost]
+
+RETURN
+IF(ISBLANK(PriorYearShippingCost), BLANK(),
+    DIVIDE(CurrentYearShippingCost - PriorYearShippingCost, PriorYearShippingCost, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
+Units Sold Variance % = 
+VAR CurrentYearUnitsSold = SUM('Sales'[Quantity])
+VAR PriorYearUnitsSold = 'Sales Measures'[Prior Year Units Sold]
+
+RETURN
+IF(ISBLANK(PriorYearUnitsSold), BLANK(),
+    DIVIDE(CurrentYearUnitsSold - PriorYearUnitsSold, PriorYearUnitsSold, 0)
+)
+-----------------------------------------------------------------------------------------------------------------------------
