@@ -44,7 +44,7 @@ Provides a high-level overview of sales, customer, and product data, and perform
 
 <img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c8a52943-a10b-4284-96ba-d9aaf9d5d836">
 
-Provides a detailed view of sales insights, growth rates, and pertinent sales performance metrics in a tablular and graphical view.
+Provides a detailed view of sales, profit, and % of sales over time, sales growth rates, and sales performance metrics in a tablular and graphical view.
 
 ### Product Performance
 
