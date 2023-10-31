@@ -1,0 +1,113 @@
+### Forecasting DAX Measures
+
+------------------------------------------------------------------------------------------------------------------------------
+Cost Forecasting = 
+    CALCULATE(
+        [Sales Forecasting] - [Profit Forecasting]
+    )
+------------------------------------------------------------------------------------------------------------------------------
+Last Year Profit = 
+CALCULATE(
+    SUM(Sales[Profit]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+Last Year Sales = 
+CALCULATE(
+    SUM(Sales[Sales]),
+    DATEADD('Date'[Date], -1, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+PR Forecasting = 
+    CALCULATE(
+        [Profit Forecasting] / [Sales Forecasting]
+    )
+------------------------------------------------------------------------------------------------------------------------------
+Profit 2Yrs Ago = 
+CALCULATE(
+    SUM(Sales[Profit]),
+    DATEADD('Date'[Date], -2, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+Profit 3Yrs Ago = 
+CALCULATE(
+    SUM(Sales[Profit]),
+    DATEADD('Date'[Date], -3, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+Profit Forecasting = 
+VAR CurrentYearProfit = 
+    CALCULATE(
+        SUM('Sales'[Profit]),
+        ALL('Date'),
+        'Date'[Year] = YEAR(TODAY())
+    )
+VAR ProfitLY = 
+    CALCULATE(
+        SUM('Sales'[Profit]),
+        DATEADD('Date'[Date], -1, YEAR)
+    )
+VAR Profit2YrsAgo = 
+    CALCULATE(
+        SUM('Sales'[Profit]),
+        DATEADD('Date'[Date], -2, YEAR)
+    )
+VAR Profit3YrsAgo = 
+    CALCULATE(
+        SUM('Sales'[Profit]),
+        DATEADD('Date'[Date], -3, YEAR)
+    )
+VAR Factor = 1.2659  //This value is based on the average % change between each sales year
+
+RETURN
+    DIVIDE(
+        SUM('Sales'[Profit]) + 
+        [Last Year Profit] + 
+        [Profit 2Yrs Ago] + [Profit 3Yrs Ago], 
+        3, 0
+    ) * Factor
+------------------------------------------------------------------------------------------------------------------------------
+Sales 2Yrs Ago = 
+CALCULATE(
+    SUM(Sales[Sales]),
+    DATEADD('Date'[Date], -2, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+Sales 3Yrs Ago = 
+CALCULATE(
+    SUM(Sales[Sales]),
+    DATEADD('Date'[Date], -3, YEAR)
+)
+------------------------------------------------------------------------------------------------------------------------------
+Sales Forecasting = 
+VAR CurrentYearSales = 
+    CALCULATE(
+        SUM('Sales'[Sales]),
+        ALL('Date'),
+        'Date'[Year] = YEAR(TODAY())
+    )
+VAR SalesLY = 
+    CALCULATE(
+        SUM('Sales'[Sales]),
+        DATEADD('Date'[Date], -1, YEAR)
+    )
+VAR Sales2YrsAgo = 
+    CALCULATE(
+        SUM('Sales'[Sales]),
+        DATEADD('Date'[Date], -2, YEAR)
+    )
+VAR Sales3YrsAgo = 
+    CALCULATE(
+        SUM('Sales'[Sales]),
+        DATEADD('Date'[Date], -3, YEAR)
+    )
+VAR Factor = 1.2398  //This value is based on the average % change between each sales year
+
+RETURN
+    DIVIDE(
+        SUM('Sales'[Sales]) + 
+        [Last Year Sales] + 
+        [Sales 2Yrs Ago] + [Sales 3Yrs Ago], 
+        3, 0
+    ) * Factor
+------------------------------------------------------------------------------------------------------------------------------
