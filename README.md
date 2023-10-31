@@ -88,4 +88,4 @@ This page offers a fully interactive visual to closely examine sales anomalies b
 
 <img width="1519" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c606da98-03b7-4dde-afa7-6ecb3fabff9f">
 
-A geospatial overview displaying sales, product, cost, shipping data, and profitability by countries and regions. The fictitious organization this dataset emulates possesses a substantial international presence which justified the showcasing of a detailed geographic map in this report. 
+A geospatial overview displaying sales, product, cost, shipping data, and profitability by countries and regions globally.
