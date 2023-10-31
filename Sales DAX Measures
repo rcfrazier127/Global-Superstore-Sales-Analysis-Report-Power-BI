@@ -1,5 +1,9 @@
 *** Sales DAX Measures ***
 -----------------------------------------------------------------------------------------------------------------------------
+Profit Ratio = SUM('Sales'[Profit]) / SUM('Sales'[Sales])
+-----------------------------------------------------------------------------------------------------------------------------
+Total Cost = SUM('Sales'[Sales]) - SUM('Sales'[Profit])
+-----------------------------------------------------------------------------------------------------------------------------
 % of Sales = 
 DIVIDE(
     SUM(Sales[Sales]), 
@@ -43,7 +47,7 @@ CALCULATE(
 Prior Year Sales = 
 CALCULATE(
     SUM(Sales[Sales]),
-    DATEADD('Date'[Date], -1, YEAR) //Replaced "-1" with "-2" and "-3" for "Sales Two/Three Years Ago" measures.
+    DATEADD('Date'[Date], -1, YEAR)
 )
 -----------------------------------------------------------------------------------------------------------------------------
 Prior Year Shipping Cost = 
@@ -57,29 +61,4 @@ CALCULATE(
     SUM(Sales[Quantity]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
-Sales N Years Ago = 
-CALCULATE(
-    SUM(Sales[Sales]),
-    DATEADD('Date'[Date], -N, YEAR)
-)
------------------------------------------------------------------------------------------------------------------------------
-YoY Sales Growth % = 
-VAR CurrentYearSales = CALCULATE(
-    SUM('Sales'[Sales]),
-    FILTER(
-        ALL('Date'),
-        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
-    )
-)
-VAR PriorYearSales = CALCULATE(
-    SUM('Sales'[Sales]),
-    FILTER(
-        ALL('Date'),
-        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date])) - 1
-    )
-)
-
-RETURN
-    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales)
 -----------------------------------------------------------------------------------------------------------------------------
