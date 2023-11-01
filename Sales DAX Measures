@@ -62,3 +62,23 @@ CALCULATE(
     DATEADD('Date'[Date], -1, YEAR)
 )
 -----------------------------------------------------------------------------------------------------------------------------
+YoY Sales Growth % = 
+VAR CurrentYearSales = CALCULATE(
+    SUM('Sales'[Sales]),
+    FILTER(
+        ALL('Date'),
+        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
+    )
+)
+
+VAR PriorYearSales = CALCULATE(
+    SUM('Sales'[Sales]),
+    FILTER(
+        ALL('Date'),
+        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date])) - 1
+    )
+)
+
+RETURN
+    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales)
+-----------------------------------------------------------------------------------------------------------------------------
