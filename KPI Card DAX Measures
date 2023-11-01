@@ -2,6 +2,8 @@
 -----------------------------------------------------------------------------------------------------------------------------
 KPI Arrows:
 
+Arrows For Avg Sales = IF([Avg Sales % Difference]<0, UNICHAR(9660), IF([Avg Sales % Difference]>0, UNICHAR(9650)))
+
 Arrows For Cost = IF([Cost Variance %]<0, UNICHAR(9660), IF([Cost Variance %]>0, UNICHAR(9650)))
 
 Arrows For Cost Forecast = IF([Cost Forecast % Difference]<0, UNICHAR(9660), IF([Cost Forecast % Difference]>0, UNICHAR(9650)))
@@ -23,6 +25,17 @@ Arrows For Shipping Cost = IF([Shipping Cost Variance %]<0, UNICHAR(9660), IF([S
 Arrows For Units = IF([Units Sold Variance %]<0, UNICHAR(9660), IF([Units Sold Variance %]>0, UNICHAR(9650)))
 -----------------------------------------------------------------------------------------------------------------------------
 Card Text = "From LY" or "From CY"
+-----------------------------------------------------------------------------------------------------------------------------
+Avg Sales % Difference = 
+VAR AvgSales = [Avg Sales]
+VAR AvgSalesLY = [Prior Year Avg Sales]
+
+RETURN
+    IF(
+        ISBLANK(AvgSales) || ISBLANK(AvgSalesLY),
+        BLANK(),
+        DIVIDE(AvgSales - AvgSalesLY, AvgSalesLY)
+    )
 -----------------------------------------------------------------------------------------------------------------------------
 Cost % Difference = 
 VAR CurrentYearCost = 'Sales Measures'[Total Cost]
