@@ -6,6 +6,15 @@ Cost Forecasting =
         [Sales Forecasting] - [Profit Forecasting]
     )
 ------------------------------------------------------------------------------------------------------------------------------
+Cumulative Sales Forecast = 
+CALCULATE(
+    [Sales Forecasting],
+        FILTER(
+            ALLSELECTED('Date'),
+            'Date'[Date] <= MAX('Date'[Date])
+        )
+    )
+------------------------------------------------------------------------------------------------------------------------------
 Last Year Profit = 
 CALCULATE(
     SUM(Sales[Profit]),
