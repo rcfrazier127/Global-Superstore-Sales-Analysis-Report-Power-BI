@@ -14,7 +14,7 @@ The column profiling shows no instance of errors and all data within the dataset
 
 ### Data Model
 
-<img width="954" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/6427709b-9b32-4e88-a6d3-ce04b8c50063">
+<img width="964" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/562c8743-bf51-42a7-9bb5-0de1798badfd">
 
 A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures, KPI card measures, and forecasting measure tables are also included.
 
@@ -24,31 +24,31 @@ The Global Superstore Sales Analysis and Forecasting Report consists of the foll
 
 ### Title Page
 
-<img width="1519" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/bd283504-3e88-4d43-b7a8-41c320fadd71">
+<img width="1560" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7bf3ef26-5d17-4a2a-84bd-4465311a3b18">
 
 An introduction to the report with a brief description of its purpose. This page includes interactive buttons that bring the user to the corresponding report pages.
 
 ### Summary
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/ef7cfa31-68bc-4214-bbef-d912032efba9">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/bf705f9a-cb57-4b2d-8850-7097b498dec3">
 
-Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, Year, and Quarter. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
+Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, and Year. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
 
 ### Sales Analysis
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c8a52943-a10b-4284-96ba-d9aaf9d5d836">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/8c676214-791f-4514-a9b0-554c50ec9baa">
 
 Provides a detailed view of sales, profit, and % of sales over time, sales growth rates, and sales performance metrics in a tablular and graphical view.
 
 ### Product Performance
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/325c1fda-a609-4c0a-8e9c-ea7d6b6498f9">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/3e5c6d0c-aec7-4851-a484-94fc654b37eb">
 
 Shows information about individual product performance and profitability. This page features tabular and graphical product data, product category time-series analyses, and a scatter plot visual which allows for the quick identification of excelling or underperforming products.
 
 ### Shipping Analysis
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/0d28c500-2a50-4138-b6e8-a2ad2103c54a">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b11510ae-1b86-4ba2-a130-762a77f90395">
 
 Provides a view of shipping cost and order volume by market divisions, country, and shipping mode. The scatter plot allows for identification of product outliers by total units shipped and total shipping cost. This page also displays time series analyses for monthly order volumes.
 
@@ -56,25 +56,25 @@ I wanted this page to feature a more detailed view of lead times by markets, cou
 
 ### Profit vs. Loss
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/3aa84111-cdbf-40c1-a709-4645e7d41535">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/8dd011c0-bb64-4a49-86a2-f50495e8d8d6">
 
 An overview of profit margins and cost analysis. Displays time series trends and monthly profit/cost comparisons. Featured in this report page is a waterfall chart displays a breakdown of monthly costs by market.
 
 ### Sales Insights
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/ef3f7db4-ff4f-4976-92b9-e22095678baf">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4f2c8b3c-1d4b-4ec1-8066-8ce095ef027b">
 
 The decomposition visual in this report page allows for deeper ad-hoc analysis and enables users to conduct root cause analysis across mutliple dimensions. 
 
-### Forecast (2015)
+### Sales Forecast (2015)
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/a0cafcca-75e7-4b1d-94b4-8bfbca89966c">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/bd75273a-c537-4b67-8ec3-e3371ff6c1f3">
 
 Provides predictive analytics based on future sales, profit, costs, and profit ratio %. Displays historical sales data to compare previous trends to forecasted sales values. The time series forecasting visuals provide a short-term projection of both sales and profit while the stacked bar visual displays a comprehensive, medium-term forecast of sales, profit, and costs. KPI cards also show % change between the current and forecasted years.
 
 ### Anomaly Detection
 
-<img width="1518" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/5271c74e-1ddb-4941-a7ff-52eb8f54e817">
+<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/bb961949-263a-4c63-89b8-ef367c6a907d">
 
 This page offers a fully interactive visual to closely examine sales anomalies between different sales years. This allows for users to identify when sales peaked during specific periods of time. Clicking on the orange indicators returns a detailed overview on the right-hand side of the report page that delivers the user further insights behind the selected anomaly.
 
