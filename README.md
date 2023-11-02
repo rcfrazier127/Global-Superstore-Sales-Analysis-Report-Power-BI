@@ -80,6 +80,6 @@ This page offers a fully interactive visual to closely examine sales anomalies b
 
 ### Geographic Map
 
-<img width="1519" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c606da98-03b7-4dde-afa7-6ecb3fabff9f">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4a92bd25-eab0-4380-9d88-e44e7c0b47c8">
 
 A geospatial overview displaying sales, product, cost, shipping data, and profitability by countries and regions globally.
