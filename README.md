@@ -14,7 +14,7 @@ The column profiling shows no instance of errors and all data within the dataset
 
 ### Data Model
 
-<img width="964" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/562c8743-bf51-42a7-9bb5-0de1798badfd">
+<img width="1018" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/35a542f5-6648-4794-aaa5-a203dacc19cc">
 
 A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures, KPI card measures, and forecasting measure tables are also included.
 
