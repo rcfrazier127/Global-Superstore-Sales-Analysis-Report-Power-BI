@@ -30,25 +30,25 @@ An introduction to the report with a brief description of its purpose. This page
 
 ### Summary
 
-<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/bf705f9a-cb57-4b2d-8850-7097b498dec3">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4d95200d-b329-495d-b3a1-cb4e4883427b">
 
-Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, and Year. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
+Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, order volume, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, and Year. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
 
 ### Sales Analysis
 
-<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/8c676214-791f-4514-a9b0-554c50ec9baa">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c9059be9-a7b7-41f9-86a3-3134fb2422b8">
 
 Provides a detailed view of sales, profit, and % of sales over time, sales growth rates, and sales performance metrics in a tablular and graphical view.
 
 ### Product Performance
 
-<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/3e5c6d0c-aec7-4851-a484-94fc654b37eb">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b90c8303-98ca-49dd-a596-0493a156cdba">
 
 Shows information about individual product performance and profitability. This page features tabular and graphical product data, product category time-series analyses, and a scatter plot visual which allows for the quick identification of excelling or underperforming products.
 
 ### Shipping Analysis
 
-<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b11510ae-1b86-4ba2-a130-762a77f90395">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/b3f7d9ec-c407-40fa-bd9e-0d64bc3c5c4b">
 
 Provides a view of shipping cost and order volume by market divisions, country, and shipping mode. The scatter plot allows for identification of product outliers by total units shipped and total shipping cost. This page also displays time series analyses for monthly order volumes.
 
