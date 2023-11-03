@@ -56,7 +56,7 @@ I wanted this page to feature a more detailed view of lead times by markets, cou
 
 ### Profit vs. Loss
 
-<img width="1433" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/8dd011c0-bb64-4a49-86a2-f50495e8d8d6">
+<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/3a6dc3fc-b724-4b88-ac67-6584b5999d69">
 
 An overview of profit margins and cost analysis. Displays time series trends and monthly profit/cost comparisons. Featured in this report page is a waterfall chart displays a breakdown of monthly costs by market.
 
