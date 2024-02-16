@@ -3,7 +3,7 @@ This file contains all DAX measures from the following tables:
 Sales Measures
 Card Measures
 Layered Donut Charts
-
+Product Metric Selection
 
 
 
@@ -30,6 +30,15 @@ AVERAGEX(
     'Product',
     CALCULATE(
         SUM('Sales'[Sales])
+    )
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Cumulative Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+    FILTER(
+        ALL('Date'[Date]),
+        'Date'[Date] <= MAX('Date'[Date]) && YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
     )
 )
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -183,6 +192,12 @@ AVERAGEX(
         DATEADD('Date'[Date], -1, YEAR)
     )
 )
+---------------------------------------------------------------------------------------------------------------------------------
+Prior Year Cumulative Sales = 
+CALCULATE(
+    'Sales Measures'[Cumulative Sales],
+        DATEADD('Date'[Date], -1, YEAR)
+    )
 ---------------------------------------------------------------------------------------------------------------------------------
 Prior Year PR = 
 CALCULATE(
@@ -573,4 +588,77 @@ Technology Spacing =
     CALCULATE(
         [Technology Sales] + [Technology Placeholder])
         * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+***Product Metric Selection***
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Product Category Comp Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "Trend Comparison by Product Category"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Category Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "by Product Category"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Category Trend Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "Comparison by Product Category"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Name Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "by Product Name"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Selection Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "by Product Name"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Subcategory Titles = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " " & "by Product Subcategory"
+---------------------------------------------------------------------------------------------------------------------------------
+Product Trend Tooltip Title = 
+SELECTEDVALUE(
+    'Product Metric Selection'[Product Metric]
+    ) & " Trend by Month"
+---------------------------------------------------------------------------------------------------------------------------------
+Selected Metric = 
+IF (
+    ISCROSSFILTERED('Product Metric Selection'[Product Metric]),
+    SWITCH(
+        SELECTEDVALUE('Product Metric Selection'[Product Metric]),
+        "Sales", SUM('Sales'[Sales]),
+        "Profit", SUM('Sales'[Profit]),
+        "Units Sold", SUM('Sales'[Quantity]),
+        "Avg. Sales", 'Sales Measures'[Avg Sales]
+    ),
+    " "
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Sort Metric = 
+IF (
+    ISCROSSFILTERED('Product Metric Selection'[Product Metric]),
+    SWITCH(
+        SELECTEDVALUE('Product Metric Selection'[Product Metric]),
+        "Sales", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Sales]), , DESC),
+        "Profit", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Profit]), , DESC),
+        "Units Sold", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Quantity]), , DESC),
+        "Avg. Sales", RANKX(ALL('Product'[Product Name]), 'Sales Measures'[Avg Sales], , DESC)
+    ),
+    BLANK()
+)
 ---------------------------------------------------------------------------------------------------------------------------------
