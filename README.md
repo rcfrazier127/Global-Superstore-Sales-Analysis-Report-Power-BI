@@ -1,3 +1,6 @@
+# For the fully interactive Power BI report, please view my portfolio on https://www.novypro.com/profile_projects/ryanfrazier
+-----------------------------------------------------------------------------------------------------------------------------
+
 # Sales Performance Report in Power BI
 
 ### Introduction
