@@ -1,12 +1,12 @@
-# Global Superstore Sales Analysis and Forecasting Report in Power BI
+# Sales Performance Report in Power BI
 
 ### Introduction
 
-This Sales Analysis and Forecasting report is designed to provide a comprehensive overview of sales data, product performance, shipping analysis, profit vs loss, and predictive analytics for future sales.
+This Sales Performance Report is designed to provide a comprehensive overview of key performance indicators, sales data, product performance, and order and shipping analysis.
 
 ### Data Preparation
 
-The Global Superstore Dataset did not require extensive preparation, aside from standardization of formatting and removal of irrelevant columns.
+The publically available Superstore Sales Dataset did not require extensive preparation, aside from standardization of formatting and removal of irrelevant columns.
 
 <img width="841" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/2257799d-eb07-4e89-b3f8-5c0c1fb99573">
 
@@ -14,27 +14,23 @@ The column profiling shows no instance of errors and all data within the dataset
 
 ### Data Model
 
-<img width="1018" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/35a542f5-6648-4794-aaa5-a203dacc19cc">
+<img width="1214" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/b9e92d50-a3e4-425e-9563-04e341457ab5">
 
-A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures, KPI card measures, and forecasting measure tables are also included.
+A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures, KPI card measures, layered donut chart measures, and product metric selection measure tables are also included.
 
 ## Report Pages
 
-The Global Superstore Sales Analysis and Forecasting Report consists of the following pages:
+The Sales Performance Report consists of the following pages:
 
-### Title Page
+### Executive KPIs
 
-<img width="1560" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/7bf3ef26-5d17-4a2a-84bd-4465311a3b18">
-
-An introduction to the report with a brief description of its purpose. This page includes interactive buttons that bring the user to the corresponding report pages.
-
-### Summary
-
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/4d95200d-b329-495d-b3a1-cb4e4883427b">
+<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/41af3910-e6ad-48f8-a154-f9012aa42384">
 
 Provides a high-level overview of sales, customer, and product data, and performance metrics. TopN countries, customers, and products by sales, total products, order volume, and product profit ratios are showcased. In each page of this report, there is included a selection of slicers that allow filtering of the data and visualizatons by Product Category/Sub Category, Country, Customer Segment, and Year. Custom KPI scorecards were created to display the % difference between the current selected year and the prior year's data for that specific card. These custom cards are featured in report pages where those metrics are relevant to the analyses contained within the page. Slicer reset buttons are also included at the top corner of each report page.
 
-### Sales Analysis
+<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/e697d849-69f6-4bf7-91b5-9df44b4598c9">
+
+### Sales Overview
 
 <img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c9059be9-a7b7-41f9-86a3-3134fb2422b8">
 
