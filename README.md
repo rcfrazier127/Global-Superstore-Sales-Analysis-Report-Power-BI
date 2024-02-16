@@ -39,7 +39,7 @@ Provides a comprehensive overview of organizational sales performance with key p
 
 ### Sales Overview
 
-<img width="1575" alt="image" src="https://github.com/rcfrazier127/Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/c9059be9-a7b7-41f9-86a3-3134fb2422b8">
+<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/430498c1-baa8-4f26-a158-6584fb9ad064">
 
 Provides a detailed view of categorical sales data and trends across customer segments, product categories, and market divisions. Segment and Category performance is compared using a custom multi-layered donut chart, providing an engaging visual that disrupts the frequency of which bar charts are used. A date granularity bookmark breaks down the sales trend visuals to allow for detailed comparisons. The Visuals/Details bookmark navigator brings the user to a tabular view displaying additional sales details.
 
