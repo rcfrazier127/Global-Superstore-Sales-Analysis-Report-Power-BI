@@ -1,31 +1,180 @@
-*** Sales DAX Measures ***
------------------------------------------------------------------------------------------------------------------------------
-Profit Ratio = SUM('Sales'[Profit]) / SUM('Sales'[Sales])
------------------------------------------------------------------------------------------------------------------------------
-Total Cost = SUM('Sales'[Sales]) - SUM('Sales'[Profit])
------------------------------------------------------------------------------------------------------------------------------
+This file contains all DAX measures from the following tables:
+
+Sales Measures
+Card Measures
+Layered Donut Charts
+
+
+
+
+
+****Sales Measures**** 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
 % of Sales = 
 DIVIDE(
-    SUM(Sales[Sales]), 
-    CALCULATE(SUM(Sales[Sales]), ALL(Sales))
+        CALCULATE(
+        SUM('Sales'[Sales]),
+        ALL('Date')
+    ),
+    CALCULATE(
+        SUM('Sales'[Sales]),
+        ALL('Sales')
+    )
 )
------------------------------------------------------------------------------------------------------------------------------
-Avg Sales per Product = 
+---------------------------------------------------------------------------------------------------------------------------------
+Avg Sales = 
 AVERAGEX(
     'Product',
     CALCULATE(
         SUM('Sales'[Sales])
     )
 )
------------------------------------------------------------------------------------------------------------------------------
-Avg Profit per Product = 
-AVERAGEX(
-    'Product',
-    CALCULATE(
-        SUM('Sales'[Profit])
+---------------------------------------------------------------------------------------------------------------------------------
+Min/Max Market Sales = 
+VAR MarketSales =
+    ALLSELECTED('Customer'[Market])
+VAR GetMaxValue =
+    MAXX (
+        MarketSales,
+        CALCULATE (
+            SUM('Sales'[Sales]
+            )
+        )
     )
-)
------------------------------------------------------------------------------------------------------------------------------
+VAR GetMinValue =
+    MINX (
+        MarketSales,
+        CALCULATE (
+            SUM('Sales'[Sales]
+            )
+        )
+    )
+RETURN
+    IF (
+        SUM ('Sales'[Sales]) = GetMaxValue,
+        "#094780",
+        IF (
+            SUM ('Sales'[Sales]) = GetMinValue,
+            "#A0D1FF",
+            "#5A97D4"
+        )
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Min/Max Order Priority = 
+VAR OrderPriority =
+    ALLSELECTED('Orders'[Order Priority])
+VAR GetMaxValue =
+    MAXX(
+        OrderPriority,
+        CALCULATE(
+            SUM('Sales'[Quantity])
+        )
+    )
+VAR GetMinValue =
+    MINX(
+        OrderPriority,
+        CALCULATE(
+            SUM('Sales'[Quantity])
+        )
+    )
+RETURN
+    IF(
+        SUM('Sales'[Quantity]) = GetMaxValue,
+        "#094780",
+        IF(
+            SUM('Sales'[Quantity]) = GetMinValue,
+            "#A0D1FF",
+            "#5A97D4"
+        )
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Min/Max Shipping Cost-Mode = 
+VAR ShippingCostMode =
+    ALLSELECTED('Orders'[Ship Mode])
+VAR GetMaxValue =
+    MAXX(
+        ShippingCostMode,
+        CALCULATE(
+            SUM('Sales'[Shipping Cost])
+        )
+    )
+VAR GetMinValue =
+    MINX(
+        ShippingCostMode,
+        CALCULATE(
+            SUM('Sales'[Shipping Cost])
+        )
+    )
+RETURN
+    IF(
+        SUM('Sales'[Shipping Cost]) = GetMaxValue,
+        "#094780",
+        IF(
+            SUM('Sales'[Shipping Cost]) = GetMinValue,
+            "#A0D1FF",
+            "#5A97D4"
+        )
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Min/Max Shipping Cost-OP = 
+VAR ShippingCostOP =
+    ALLSELECTED('Orders'[Order Priority])
+VAR GetMaxValue =
+    MAXX(
+        ShippingCostOP,
+        CALCULATE(
+            SUM('Sales'[Shipping Cost])
+        )
+    )
+VAR GetMinValue =
+    MINX(
+        ShippingCostOP,
+        CALCULATE(
+            SUM('Sales'[Shipping Cost])
+        )
+    )
+RETURN
+    IF(
+        SUM('Sales'[Shipping Cost]) = GetMaxValue,
+        "#094780",
+        IF(
+            SUM('Sales'[Shipping Cost]) = GetMinValue,
+            "#A0D1FF",
+            "#5A97D4"
+        )
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Min/Max Shipping Mode = 
+VAR ShippingMode =
+    ALLSELECTED('Orders'[Ship Mode])
+VAR GetMaxValue =
+    MAXX(
+        ShippingMode,
+        CALCULATE(
+            SUM('Sales'[Quantity])
+        )
+    )
+VAR GetMinValue =
+    MINX(
+        ShippingMode,
+        CALCULATE(
+            SUM('Sales'[Quantity])
+        )
+    )
+RETURN
+    IF(
+        SUM('Sales'[Quantity]) = GetMaxValue,
+        "#094780",
+        IF(
+            SUM('Sales'[Quantity]) = GetMinValue,
+            "#A0D1FF",
+            "#5A97D4"
+        )
+    )
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year Avg Sales = 
 AVERAGEX(
     'Product',
@@ -34,43 +183,47 @@ AVERAGEX(
         DATEADD('Date'[Date], -1, YEAR)
     )
 )
------------------------------------------------------------------------------------------------------------------------------
-Prior Year Cost = 
-CALCULATE(
-    SUM('Sales'[Sales]) + SUM('Sales'[Profit]),
-    DATEADD('Date'[Date], -1, YEAR)
-)
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year PR = 
 CALCULATE(
     SUM('Sales'[Profit]) / SUM('Sales'[Sales]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year Profit = 
 CALCULATE(
     SUM(Sales[Profit]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year Sales = 
 CALCULATE(
     SUM(Sales[Sales]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year Shipping Cost = 
 CALCULATE(
     SUM('Sales'[Shipping Cost]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 Prior Year Units Sold = 
 CALCULATE(
     SUM(Sales[Quantity]),
     DATEADD('Date'[Date], -1, YEAR)
 )
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio = SUM('Sales'[Profit]) / SUM('Sales'[Sales])
+
+---------------------------------------------------------------------------------------------------------------------------------
+Units Ordered Percent = 
+DIVIDE(
+    SUM('Sales'[Quantity]),
+    CALCULATE(SUM('Sales'[Quantity]), ALL('Sales')
+    )
+)
+---------------------------------------------------------------------------------------------------------------------------------
 YoY Sales Growth % = 
 VAR CurrentYearSales = CALCULATE(
     SUM('Sales'[Sales]),
@@ -90,4 +243,334 @@ VAR PriorYearSales = CALCULATE(
 
 RETURN
     DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales)
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+***CARD MEASURES***
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Avg Sales % Difference = 
+VAR AvgSales = [Avg Sales]
+VAR AvgSalesLY = [Prior Year Avg Sales]
+
+RETURN
+    IF(
+        ISBLANK(AvgSales) || ISBLANK(AvgSalesLY),
+        BLANK(),
+        DIVIDE(AvgSales - AvgSalesLY, AvgSalesLY)
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Avg Sales Difference = 
+VAR CurrentYearAvgSales = 'Sales Measures'[Avg Sales]
+VAR PriorYearAvgSales = 'Sales Measures'[Prior Year Avg Sales]
+VAR AvgSalesDifference =
+    IF(ISBLANK(PriorYearAvgSales), BLANK(),
+        DIVIDE(CurrentYearAvgSales - PriorYearAvgSales, PriorYearAvgSales, 0)
+    )
+VAR DifferenceValue = CurrentYearAvgSales - PriorYearAvgSales
+VAR Arrow =
+    IF(
+        AvgSalesDifference < 0, UNICHAR(9660),
+        IF(AvgSalesDifference > 0, UNICHAR(9650), "")
+    )
+VAR FormattedDifferenceValue =
+    IF(
+        ISBLANK(CurrentYearAvgSales) || ISBLANK(PriorYearAvgSales),
+        BLANK(),
+        IF(
+            DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0.00"),
+            "-$" & FORMAT(ABS(DifferenceValue), "#,##0.00")
+        )
+    )
+RETURN
+    IF(
+        ISBLANK(CurrentYearAvgSales) || ISBLANK(PriorYearAvgSales),
+        BLANK(),
+        Arrow & "  " & FORMAT(AvgSalesDifference, "0.00%") & " | " & FormattedDifferenceValue
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+PR % Difference = 
+VAR CurrentYearPR = 'Sales Measures'[Profit Ratio]
+VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
+
+RETURN
+IF(ISBLANK(PriorYearPR), BLANK(),
+    DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Profit % Difference = 
+VAR CurrentYearProfit = SUM('Sales'[Profit])
+VAR PriorYearProfit = 'Sales Measures'[Prior Year Profit]
+
+RETURN
+IF(ISBLANK(PriorYearProfit), BLANK(),
+    DIVIDE(CurrentYearProfit - PriorYearProfit, PriorYearProfit, 0)
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Difference = 
+VAR CurrentYearProfit = SUM('Sales'[Profit])
+VAR PriorYearProfit = 'Sales Measures'[Prior Year Profit]
+VAR ProfitDifference =
+    IF(ISBLANK(PriorYearProfit), BLANK(),
+        DIVIDE(CurrentYearProfit - PriorYearProfit, PriorYearProfit, 0)
+    )
+VAR DifferenceValue = CurrentYearProfit - PriorYearProfit
+VAR Arrow =
+    IF(ProfitDifference < 0, UNICHAR(9660), IF(ProfitDifference > 0, UNICHAR(9650), ""))
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(CurrentYearProfit) || ISBLANK(PriorYearProfit),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
+    )
+RETURN
+    IF(ISBLANK(CurrentYearProfit) || ISBLANK(PriorYearProfit),
+        BLANK(),
+        Arrow & " " & FORMAT(ProfitDifference, "##.##%") & " | " & FormattedDifferenceValue
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio Difference = 
+VAR CurrentYearPR = 'Sales Measures'[Profit Ratio]
+VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
+VAR PRDifference =
+    IF(ISBLANK(PriorYearPR), BLANK(),
+        DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
+    )
+VAR DifferenceValue = CurrentYearPR - PriorYearPR
+VAR Arrow =
+    IF(PRDifference < 0, UNICHAR(9660), IF(PRDifference > 0, UNICHAR(9650), "")
+    )
+RETURN
+    IF(ISBLANK(CurrentYearPR) || ISBLANK(PriorYearPR),
+        BLANK(),
+        Arrow & "    " & FORMAT(PRDifference, "##.##%")
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Sales % Difference = 
+VAR CurrentYearSales = SUM('Sales'[Sales])
+VAR PriorYearSales = 'Sales Measures'[Prior Year Sales]
+
+RETURN
+IF(ISBLANK(PriorYearSales), BLANK(),
+    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Difference = 
+VAR CurrentYearSales = SUM('Sales'[Sales])
+VAR PriorYearSales = 'Sales Measures'[Prior Year Sales]
+VAR SalesDifference =
+    IF(ISBLANK(PriorYearSales), BLANK(),
+        DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
+    )
+VAR DifferenceValue = CurrentYearSales - PriorYearSales
+VAR Arrow =
+    IF(SalesDifference < 0, UNICHAR(9660), IF(SalesDifference > 0, UNICHAR(9650), "")
+    )
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(CurrentYearSales) || ISBLANK(PriorYearSales),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
+        )
+    )
+RETURN
+    IF(ISBLANK(CurrentYearSales) || ISBLANK(PriorYearSales),
+        BLANK(),
+        Arrow & " " & FORMAT(SalesDifference, "##.##%") & " | " & FormattedDifferenceValue
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Shipping Cost % Difference = 
+VAR CurrentYearShippingCost = SUM('Sales'[Shipping Cost])
+VAR PriorYearShippingCost = 'Sales Measures'[Prior Year Shipping Cost]
+
+RETURN
+IF(ISBLANK(PriorYearShippingCost), BLANK(),
+    DIVIDE(CurrentYearShippingCost - PriorYearShippingCost, PriorYearShippingCost, 0)
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Shipping Cost Difference = 
+VAR CurrentYearShippingCost = SUM('Sales'[Shipping Cost])
+VAR PriorYearShippingCost = 'Sales Measures'[Prior Year Shipping Cost]
+VAR ShippingCostDifference =
+    IF(ISBLANK(PriorYearShippingCost), BLANK(),
+        DIVIDE(CurrentYearShippingCost - PriorYearShippingCost, PriorYearShippingCost, 0)
+    )
+VAR DifferenceValue = CurrentYearShippingCost - PriorYearShippingCost
+VAR Arrow =
+    IF(ShippingCostDifference < 0, UNICHAR(9660), IF(ShippingCostDifference > 0, UNICHAR(9650), ""))
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(CurrentYearShippingCost) || ISBLANK(PriorYearShippingCost),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
+    )
+RETURN
+    IF(ISBLANK(CurrentYearShippingCost) || ISBLANK(PriorYearShippingCost),
+        BLANK(),
+        Arrow & " " & FORMAT(ShippingCostDifference, "##.##%") & " | " & FormattedDifferenceValue
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Units Sold % Difference = 
+VAR CurrentYearUnitsSold = SUM('Sales'[Quantity])
+VAR PriorYearUnitsSold = 'Sales Measures'[Prior Year Units Sold]
+
+RETURN
+IF(ISBLANK(PriorYearUnitsSold), BLANK(),
+    DIVIDE(CurrentYearUnitsSold - PriorYearUnitsSold, PriorYearUnitsSold, 0)
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Units Sold Difference = 
+VAR CurrentYearUnits = SUM('Sales'[Quantity])
+VAR PriorYearUnits = 'Sales Measures'[Prior Year Units Sold]
+VAR UnitsDifference =
+    IF(ISBLANK(PriorYearUnits), BLANK(),
+        DIVIDE(CurrentYearUnits - PriorYearUnits, PriorYearUnits, 0)
+    )
+VAR DifferenceValue = CurrentYearUnits - PriorYearUnits
+VAR Arrow =
+    IF(UnitsDifference < 0, UNICHAR(9660), IF(UnitsDifference > 0, UNICHAR(9650), ""))
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(CurrentYearUnits) || ISBLANK(PriorYearUnits),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
+    )
+RETURN
+    IF(ISBLANK(CurrentYearUnits) || ISBLANK(PriorYearUnits),
+        BLANK(),
+        Arrow & " " & FORMAT(UnitsDifference, "##.##%") & " | " & FormattedDifferenceValue
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+***Layered Donut Charts***
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Consumer Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Customer'[Segment] = "Consumer")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Consumer Sales Difference = 
+VAR ConsumerSalesTarget = [Consumer Sales] - [Consumer Placeholder]
+RETURN
+IF(
+    ConsumerSalesTarget>=0, 
+        ConsumerSalesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Consumer Spacing = 
+    CALCULATE(
+        [Consumer Sales] + [Consumer Placeholder]) 
+        * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+Corporate Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Customer'[Segment] = "Corporate")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Corporate Sales Difference = 
+VAR CorporateSalesTarget = [Corporate Sales] - [Corporate Placeholder]
+RETURN
+IF(
+    CorporateSalesTarget>=0, 
+        CorporateSalesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Corporate Spacing = 
+    CALCULATE(
+        [Corporate Sales] + [Consumer Placeholder])
+        * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+Furniture Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Product'[Category] = "Furniture")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Furniture Sales Difference = 
+VAR FurnitureSalesTarget = [Furniture Sales] - [Furniture Placeholder]
+RETURN
+IF(
+    FurnitureSalesTarget>=0, 
+        FurnitureSalesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Furniture Spacing = 
+    CALCULATE(
+        [Furniture Sales] + [Furniture Placeholder]) 
+        * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+Home Office Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Customer'[Segment] = "Home Office")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Home Office Sales Difference = 
+VAR HomeOfficeSalesTarget = [Home Office Sales] - [Home Office Placeholder]
+RETURN
+IF(
+    HomeOfficeSalesTarget>=0, 
+        HomeOfficeSalesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Home Office Spacing = 
+    CALCULATE(
+        [Home Office Sales] + [Home Office Placeholder]) 
+        * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+Office Supplies Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Product'[Category] = "Office Supplies")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Office Supplies Sales Difference = 
+VAR OfficeSuppliesTarget = [Office Supplies Sales] - [Office Supplies Placeholder]
+RETURN
+IF(
+    OfficeSuppliesTarget>=0, 
+        OfficeSuppliesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Office Supplies Spacing = 
+    CALCULATE(
+        [Office Supplies Sales] + [Office Supplies Placeholder])
+         * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
+Technology Sales = 
+CALCULATE(
+    SUM('Sales'[Sales]),
+        KEEPFILTERS('Product'[Category] = "Technology")
+)
+---------------------------------------------------------------------------------------------------------------------------------
+Technology Sales Difference = 
+VAR TechnologySalesTarget = [Technology Sales] - [Technology Placeholder]
+RETURN
+IF(
+    TechnologySalesTarget>=0, 
+        TechnologySalesTarget, 0
+    )
+---------------------------------------------------------------------------------------------------------------------------------
+Technology Spacing = 
+    CALCULATE(
+        [Technology Sales] + [Technology Placeholder])
+        * 0.33
+---------------------------------------------------------------------------------------------------------------------------------
