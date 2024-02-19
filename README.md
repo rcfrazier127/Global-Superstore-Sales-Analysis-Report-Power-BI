@@ -19,7 +19,7 @@ The column profiling shows no instance of errors and all data within the dataset
 
 ### Data Model
 
-<img width="1214" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/b9e92d50-a3e4-425e-9563-04e341457ab5">
+<img width="1188" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/ca2f8d71-8920-4c93-94a7-1d26b0f092b3">
 
 A simple Star Schema format was used to model the data in Power BI. This model contains a central fact table titled "Sales" in addition to "Product", "Orders", "Customer", and a custom "Date" table as dimensions. Separate sales measures, KPI card measures, layered donut chart measures, and product metric selection measure tables are also included.
 
@@ -42,11 +42,11 @@ Provides a comprehensive overview of organizational sales performance with key p
 
 ### Sales Overview
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/430498c1-baa8-4f26-a158-6584fb9ad064">
+<img width="1501" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/fdd058bf-849a-4dc5-b1c4-d05868fc1df5">
 
-Provides a detailed view of categorical sales data and trends across customer segments, product categories, and market divisions. Segment and Category performance is compared using a custom multi-layered donut chart, providing an engaging visual that disrupts the frequency of which bar charts are used. A date granularity bookmark breaks down the sales trend visuals to allow for detailed comparisons. The Visuals/Details bookmark navigator brings the user to a tabular view displaying additional sales details.
+Provides a detailed view of categorical sales data and trends across customer segments, product categories, and market divisions. Segment, Market, and Product Category performance is compared against the previous sales year with a native overlapping clustered bar chart. A date granularity bookmark breaks down the sales trend visuals to allow for detailed comparisons. The Visuals/Details bookmark navigator brings the user to a tabular view displaying additional sales details.
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/d72ab8ff-ce0f-47ab-b72b-b80cff6637a9">
+<img width="1501" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/26ba8909-a249-42b3-8e1c-21679298ccc2">
 
 
 ### Product Analysis
@@ -60,11 +60,10 @@ Provides sales data for individual product performance and profitability. This p
 
 ### Order Insights
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/ca159d2d-e5c8-49ba-b117-795a520f3614">
+<img width="1501" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/baa21d1e-42fb-4c39-a188-21afcd1e880f">
 
 Provides a detailed view of order volume and shipping cost and by product subcategory, monthly trends, order priority, and shipping mode. The page's main feature is a matrix heat map with accompanying vertical and horizontal bar charts that simultaneously display volume by month and subcategory, which identifies how demand varies between various months. There was very little variance between shipping days across market divisions and countries within this dataset so a detailed analysis of this area was not conducted. The bookmark allows the user to view order volume in nominal and percentage format in addition to shipping cost across all visuals on this page.
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/d6fc065d-2c35-4a7e-91fe-93caf686dd0e">
+<img width="1500" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/89c1f04d-38b1-4e85-bc0b-7633da4ffd76">
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/b904de2e-b6b0-4e90-872c-b56c9410c74b">
-
+<img width="1502" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/97143eae-015e-4d66-8470-9033e828f269">
