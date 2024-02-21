@@ -44,11 +44,11 @@ Provides a comprehensive overview of organizational sales performance with key p
 
 ### Sales Overview
 
-<img width="1565" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/0668af0c-6e93-4a61-b191-26a016262254">
+<img width="1564" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/b4e6e90e-af20-4bea-a55b-2c2c9396b53d">
 
 Provides a detailed view of categorical sales data and trends across customer segments, product categories, and market divisions. Segment, Market, and Product Category performance is compared against the previous sales year with a native overlapping clustered bar chart. A date granularity bookmark breaks down the sales trend visuals to allow for detailed comparisons. The Visuals/Details bookmark navigator brings the user to a tabular view displaying additional sales details (_See below_).
 
-<img width="1564" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/d52f3ffb-106b-49b4-a566-9654affaedda">
+![Uploading image.png…]()
 
 
 
