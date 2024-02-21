@@ -34,11 +34,11 @@ _Note: This report includes a page navigation pane and clear active filters butt
 
 ### Executive KPIs
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/41af3910-e6ad-48f8-a154-f9012aa42384">
+<img width="1564" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/099cd78f-587b-45ef-9f99-57865952a567">
 
-Provides a comprehensive overview of organizational sales performance with key performance indicators to monitor the following metrics: sales, profit, profit ratio %, units sold, shipping cost, and average sales. The trends for the current year are measured against the prior year and custom KPI card visuals reflect the nominal and percent difference between the compared years. The Lines/Bars bookmark navigator allows for toggling between the display of lines and bars in the card visuals to allow the user to choose how to compare performance trends.
+Provides a comprehensive overview of organizational sales performance with key performance indicators to monitor the following metrics: sales, profit, profit ratio %, units sold, shipping cost, and average sales. The trends for the current year are measured against the prior year and custom KPI card visuals reflect the nominal and percent difference between the compared years. The Lines/Bars bookmark navigator allows for toggling between the display of lines and bars in the card visuals to allow the user to choose how to compare performance trends (_See below_).
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/e697d849-69f6-4bf7-91b5-9df44b4598c9">
+<img width="1565" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/cf39342c-bda1-47d5-82c8-46fe992ede9f">
 
 
 
