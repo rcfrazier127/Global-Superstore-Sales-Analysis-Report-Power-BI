@@ -34,42 +34,44 @@ _Note: This report includes a page navigation pane and clear active filters butt
 
 ### Executive KPIs
 
-<img width="1564" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/099cd78f-587b-45ef-9f99-57865952a567">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/a193f923-90b0-4ec4-b985-394cefc4f14b">
 
 Provides a comprehensive overview of organizational sales performance with key performance indicators to monitor the following metrics: sales, profit, profit ratio %, units sold, shipping cost, and average sales. The trends for the current year are measured against the prior year and custom KPI card visuals reflect the nominal and percent difference between the compared years. The Lines/Bars bookmark navigator allows for toggling between the display of lines and bars in the card visuals to allow the user to choose how to compare performance trends (_See below_).
 
-<img width="1565" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/cf39342c-bda1-47d5-82c8-46fe992ede9f">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/f6ee94db-bbba-41bc-8c72-56a87bb95f74">
 
 
 
 ### Sales Overview
 
-<img width="1564" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/b4e6e90e-af20-4bea-a55b-2c2c9396b53d">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/4bb37254-b566-4f6b-bc8c-41ce6184e116">
 
 Provides a detailed view of categorical sales data and trends across customer segments, product categories, and market divisions. Segment, Market, and Product Category performance is compared against the previous sales year with a native overlapping clustered bar chart. A date granularity bookmark breaks down the sales trend visuals to allow for detailed comparisons. The Visuals/Details bookmark navigator brings the user to a tabular view displaying additional sales details (_See below_).
 
-![Uploading image.png…]()
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/eccb122b-eb1c-4973-8d7f-5feadfd80272">
 
 
 
 ### Product Analysis
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/4b278bea-549f-431f-98c0-df6c00e0add3">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/7620885a-a112-4fd8-a7a5-319f19eb4413">
 
 Provides sales data for individual product performance and profitability. This page features a bar column visual with a slicer that allows for the dynamic filtering of sales metrics between individual products and produxt subcategories. A scatter plot also shows the profitability of product subcategories. This is the only page that uses tooltips, which update dynamically as the user filters between sales metrics. This was accomplished with the use of dynamic title names to accurately reflect details for the metric being currently viewed. The bookmark navigator above brings the user to a tabular visual that displays additional product performance details (_See below_).
 
-<img width="1528" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/3e1ea021-d461-4214-a2ef-0bdec5679928">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/e4e8bca9-43c9-4d88-aae9-05836abc3bc9">
 
 
 
 ### Order Insights
 
-<img width="1501" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/baa21d1e-42fb-4c39-a188-21afcd1e880f">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/1a354356-02ac-4168-a3dc-6c5430cc718d">
 
 Provides a detailed view of order volume and shipping cost and by product subcategory, monthly trends, order priority, and shipping mode. The page's main feature is a matrix heat map with accompanying vertical and horizontal bar charts that simultaneously display volume by month and subcategory, which identifies how demand varies between various months. There was very little variance between shipping days across market divisions and countries within this dataset so a detailed analysis of this area was not conducted. The bookmark allows the user to view order volume in nominal and percentage format in addition to shipping cost across all visuals on this page (_See below_).
 
 Percentage View:
-<img width="1500" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/89c1f04d-38b1-4e85-bc0b-7633da4ffd76">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/1990dfef-fc38-4c18-a758-388c6f4a8bac">
+
 
 Shipping Cost View:
-<img width="1502" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/97143eae-015e-4d66-8470-9033e828f269">
+<img width="1557" alt="image" src="https://github.com/rcfrazier127/Sales-Performance-Report-Power-BI/assets/63532077/22bc7129-9c99-4029-b798-e1b107a4ff47">
+
