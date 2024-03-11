@@ -10,7 +10,7 @@ This Sales Performance Report is designed to provide a comprehensive overview of
 
 ### Data Preparation
 
-The publically available Superstore Sales Dataset did not require extensive preparation, aside from standardization of formatting and removal of irrelevant columns.
+The publicly available Superstore Sales Dataset did not require extensive preparation, aside from standardization of formatting and removal of irrelevant columns.
 
 <img width="841" alt="image" src="https://github.com/rcfrazier127/SuperStore-Sales-Analysis-and-Forecasting-Report-Power-BI/assets/63532077/2257799d-eb07-4e89-b3f8-5c0c1fb99573">
 
