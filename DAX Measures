@@ -25,196 +25,156 @@ DIVIDE(
     )
 )
 ---------------------------------------------------------------------------------------------------------------------------------
-Avg Sales = 
-AVERAGEX(
-    'Product',
-    CALCULATE(
-        SUM('Sales'[Sales])
-    )
-)
+Profit CY = SUM('Sales'[Profit])
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Min/Max Order Priority = 
-VAR OrderPriority =
-    ALLSELECTED('Orders'[Order Priority])
-VAR GetMaxValue =
-    MAXX(
-        OrderPriority,
-        CALCULATE(
-            SUM('Sales'[Quantity])
-        )
-    )
-VAR GetMinValue =
-    MINX(
-        OrderPriority,
-        CALCULATE(
-            SUM('Sales'[Quantity])
-        )
-    )
-RETURN
-    IF(
-        SUM('Sales'[Quantity]) = GetMaxValue,
-        "#094780",
-        IF(
-            SUM('Sales'[Quantity]) = GetMinValue,
-            "#A0D1FF",
-            "#5A97D4"
-        )
-    )
----------------------------------------------------------------------------------------------------------------------------------
-Min/Max Shipping Cost-Mode = 
-VAR ShippingCostMode =
-    ALLSELECTED('Orders'[Ship Mode])
-VAR GetMaxValue =
-    MAXX(
-        ShippingCostMode,
-        CALCULATE(
-            SUM('Sales'[Shipping Cost])
-        )
-    )
-VAR GetMinValue =
-    MINX(
-        ShippingCostMode,
-        CALCULATE(
-            SUM('Sales'[Shipping Cost])
-        )
-    )
-RETURN
-    IF(
-        SUM('Sales'[Shipping Cost]) = GetMaxValue,
-        "#094780",
-        IF(
-            SUM('Sales'[Shipping Cost]) = GetMinValue,
-            "#A0D1FF",
-            "#5A97D4"
-        )
-    )
----------------------------------------------------------------------------------------------------------------------------------
-Min/Max Shipping Cost-OP = 
-VAR ShippingCostOP =
-    ALLSELECTED('Orders'[Order Priority])
-VAR GetMaxValue =
-    MAXX(
-        ShippingCostOP,
-        CALCULATE(
-            SUM('Sales'[Shipping Cost])
-        )
-    )
-VAR GetMinValue =
-    MINX(
-        ShippingCostOP,
-        CALCULATE(
-            SUM('Sales'[Shipping Cost])
-        )
-    )
-RETURN
-    IF(
-        SUM('Sales'[Shipping Cost]) = GetMaxValue,
-        "#094780",
-        IF(
-            SUM('Sales'[Shipping Cost]) = GetMinValue,
-            "#A0D1FF",
-            "#5A97D4"
-        )
-    )
----------------------------------------------------------------------------------------------------------------------------------
-Min/Max Shipping Mode = 
-VAR ShippingMode =
-    ALLSELECTED('Orders'[Ship Mode])
-VAR GetMaxValue =
-    MAXX(
-        ShippingMode,
-        CALCULATE(
-            SUM('Sales'[Quantity])
-        )
-    )
-VAR GetMinValue =
-    MINX(
-        ShippingMode,
-        CALCULATE(
-            SUM('Sales'[Quantity])
-        )
-    )
-RETURN
-    IF(
-        SUM('Sales'[Quantity]) = GetMaxValue,
-        "#094780",
-        IF(
-            SUM('Sales'[Quantity]) = GetMinValue,
-            "#A0D1FF",
-            "#5A97D4"
-        )
-    )
----------------------------------------------------------------------------------------------------------------------------------
-Prior Year Avg Sales = 
-AVERAGEX(
-    'Product',
-    CALCULATE(
-        SUM('Sales'[Sales]),
-        DATEADD('Date'[Date], -1, YEAR)
-    )
-)
----------------------------------------------------------------------------------------------------------------------------------
-Prior Year PR = 
-CALCULATE(
-    SUM('Sales'[Profit]) / SUM('Sales'[Sales]),
-    DATEADD('Date'[Date], -1, YEAR)
-)
----------------------------------------------------------------------------------------------------------------------------------
-Prior Year Profit = 
+Profit LY = 
 CALCULATE(
     SUM(Sales[Profit]),
     DATEADD('Date'[Date], -1, YEAR)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Prior Year Sales = 
+Profit Ratio = [Profit CY] / [Sales CY]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio LY = 
 CALCULATE(
-    SUM(Sales[Sales]),
+    [Profit CY] / [Sales CY],
     DATEADD('Date'[Date], -1, YEAR)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Prior Year Shipping Cost = 
+Sales Constant Line Center = 315000
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Constant Line Center Dummy = [Sales Constant Line Center]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY = SUM('Sales'[Sales])
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Bar Color = 
+IF(
+    [Sales CY] > [Sales LY], "Green", "Red"
+) 
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Error Label = 
+IF(
+    [Sales CY] > [Sales LY], [Sales CY], [Sales LY]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Green Max = 
+IF(
+    [Sales CY] > [Sales LY], [Sales CY vs LY Error Label]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Label Left = 
+IF(
+    [Sales CY] < [Sales LY],
+    [Sales Constant Line Center] + [Sales CY vs LY Negative]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Label Right = 
+IF(
+    [Sales CY] > [Sales LY],
+    [Sales Constant Line Center] + [Sales CY vs LY Positive]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Negative = 
+IF(
+    [Sales CY] < [Sales LY],
+    [Sales % Difference] * 1000000
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Positive = 
+IF(
+    [Sales CY] > [Sales LY],
+    [Sales % Difference] * 1000000
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs LY Red Max = 
+IF(
+    [Sales CY] < [Sales LY], [Sales CY vs LY Error Label]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs Target Negative = 
+IF(
+    SUM('Sales'[Sales]) < [Sales Target],
+    [Sales Target % Difference] * 1000000
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales CY vs Target Positive = 
+IF(
+    SUM('Sales'[Sales]) > [Sales Target],
+    [Sales Target % Difference] * 1000000
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales LY = 
 CALCULATE(
-    SUM('Sales'[Shipping Cost]),
+    [Sales CY],
     DATEADD('Date'[Date], -1, YEAR)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Prior Year Units Sold = 
+Sales Target Label Left = 
+IF(
+    [Sales CY] < [Sales Target],
+    [Sales Constant Line Center] + [Sales CY vs Target Negative]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Target Label Right = 
+IF(
+    [Sales CY] > [Sales Target],
+    [Sales Constant Line Center] + [Sales CY vs Target Positive]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales vs Target Bar Color = 
+IF(
+    [Sales CY] > [Sales Target], "Green", "Red"
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales vs Target Error Label = 
+IF(
+    [Sales CY] > [Sales Target], [Sales CY], [Sales Target]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales vs Target Green Max = 
+IF(
+    [Sales CY] > [Sales Target], [Sales vs Target Error Label]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales vs Target Red Max = 
+IF(
+    [Sales CY] < [Sales Target], [Sales vs Target Error Label]
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Units Sold CY = SUM('Sales'[Units Sold])
+
+---------------------------------------------------------------------------------------------------------------------------------
+Units Sold LY = 
 CALCULATE(
-    SUM(Sales[Quantity]),
+    [Units Sold CY],
     DATEADD('Date'[Date], -1, YEAR)
 )
----------------------------------------------------------------------------------------------------------------------------------
-Profit Ratio = SUM('Sales'[Profit]) / SUM('Sales'[Sales])
 
 ---------------------------------------------------------------------------------------------------------------------------------
-Units Ordered Percent = 
-DIVIDE(
-    SUM('Sales'[Quantity]),
-    CALCULATE(SUM('Sales'[Quantity]), ALL('Sales')
-    )
-)
----------------------------------------------------------------------------------------------------------------------------------
-YoY Sales Growth % = 
-VAR CurrentYearSales = CALCULATE(
-    SUM('Sales'[Sales]),
-    FILTER(
-        ALL('Date'),
-        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
-    )
-)
-
-VAR PriorYearSales = CALCULATE(
-    SUM('Sales'[Sales]),
-    FILTER(
-        ALL('Date'),
-        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date])) - 1
-    )
-)
-
-RETURN
-    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales)
----------------------------------------------------------------------------------------------------------------------------------
-
 
 
 
@@ -228,264 +188,430 @@ RETURN
 
 
 ---------------------------------------------------------------------------------------------------------------------------------
-Avg Sales % Difference = 
-VAR AvgSales = [Avg Sales]
-VAR AvgSalesLY = [Prior Year Avg Sales]
+Card Text AC = "(AC) vs. LY:"
+
+---------------------------------------------------------------------------------------------------------------------------------
+Card Text LY = "vs. Last Year:"
+
+---------------------------------------------------------------------------------------------------------------------------------
+Card Text LY Short = "vs. LY"
+
+---------------------------------------------------------------------------------------------------------------------------------
+Card Text Target = "vs. Target:"
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit % Difference = 
+VAR ProfitCY = [Profit CY]
+VAR ProfitLY = [Profit LY]
 
 RETURN
-    IF(
-        ISBLANK(AvgSales) || ISBLANK(AvgSalesLY),
-        BLANK(),
-        DIVIDE(AvgSales - AvgSalesLY, AvgSalesLY)
-    )
+IF(ISBLANK(ProfitLY), BLANK(),
+    DIVIDE([Profit CY] - ProfitLY, ProfitLY, 0)
+)
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Avg Sales Difference = 
-VAR CurrentYearAvgSales = 'Sales Measures'[Avg Sales]
-VAR PriorYearAvgSales = 'Sales Measures'[Prior Year Avg Sales]
-VAR AvgSalesDifference =
-    IF(ISBLANK(PriorYearAvgSales), BLANK(),
-        DIVIDE(CurrentYearAvgSales - PriorYearAvgSales, PriorYearAvgSales, 0)
+Profit Difference = 
+VAR ProfitCY = [Profit CY]
+VAR ProfitLY = [Profit LY]
+VAR ProfitDifference =
+    IF(ISBLANK(ProfitLY), BLANK(),
+        DIVIDE(ProfitCY - ProfitLY, ProfitLY, 0)
     )
-VAR DifferenceValue = CurrentYearAvgSales - PriorYearAvgSales
+VAR DifferenceValue = ProfitCY - ProfitLY
+VAR Arrow =
+    IF(ProfitDifference < 0, UNICHAR(9660), IF(ProfitDifference > 0, UNICHAR(9650), ""))
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(ProfitCY) || ISBLANK(ProfitLY),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
+    )
+    
+RETURN
+    IF(ISBLANK(ProfitCY) || ISBLANK(ProfitLY),
+        BLANK(),
+        FormattedDifferenceValue & " | " & Arrow & FORMAT(ProfitDifference, "##.##%")
+    )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio % Difference = 
+VAR ProfitRatioCY = [Profit Ratio]
+VAR ProfitRatioLY = [Profit Ratio LY]
+
+RETURN
+IF(ISBLANK(ProfitRatioLY), BLANK(),
+    DIVIDE(ProfitRatioCY - ProfitRatioLY, ProfitRatioLY, 0)
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio Difference = 
+VAR ProfitRatioCY = [Profit Ratio]
+VAR ProfitRatioLY = [Profit Ratio LY]
+VAR ProfitRatioDifference =
+    IF(ISBLANK(ProfitRatioLY), BLANK(),
+        DIVIDE(ProfitRatioCY - ProfitRatioLY, ProfitRatioLY, 0)
+    )
+VAR DifferenceValue = ProfitRatioCY - ProfitRatioLY
+VAR Arrow =
+    IF(ProfitRatioDifference < 0, UNICHAR(9660), IF(ProfitRatioDifference > 0, UNICHAR(9650), "")
+    )
+
+RETURN
+    IF(ISBLANK(ProfitRatioCY) || ISBLANK(ProfitRatioLY),
+        BLANK(),
+        Arrow & FORMAT(ProfitRatioDifference, "##.##%")
+    )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio Target = ([Profit Ratio LY] * 1.2)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio Target % Difference = 
+IF(
+    ISBLANK([Profit Ratio Target]), BLANK(),
+        DIVIDE([Profit Ratio] - [Profit Ratio Target], [Profit Ratio Target], 0)
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Ratio Target Difference = 
+VAR ProfitRatioDifference =
+    IF(
+        ISBLANK([Profit Ratio Target]), BLANK(),
+            DIVIDE([Profit Ratio] - [Profit Ratio Target], [Profit Ratio Target], 0)
+    )
+VAR DifferenceValue = [Profit Ratio] - [Profit Ratio Target]
 VAR Arrow =
     IF(
-        AvgSalesDifference < 0, UNICHAR(9660),
-        IF(AvgSalesDifference > 0, UNICHAR(9650), "")
+        ProfitRatioDifference < 0, UNICHAR(9660), IF(ProfitRatioDifference > 0, UNICHAR(9650), "")
     )
 VAR FormattedDifferenceValue =
     IF(
-        ISBLANK(CurrentYearAvgSales) || ISBLANK(PriorYearAvgSales),
-        BLANK(),
-        IF(
-            DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0.00"),
-            "-$" & FORMAT(ABS(DifferenceValue), "#,##0.00")
+        ISBLANK([Profit Ratio Target]) || ISBLANK([Profit Ratio]),
+            BLANK(),
+                IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
         )
     )
 RETURN
     IF(
-        ISBLANK(CurrentYearAvgSales) || ISBLANK(PriorYearAvgSales),
-        BLANK(),
-        Arrow & "  " & FORMAT(AvgSalesDifference, "0.00%") & " | " & FormattedDifferenceValue
+        ISBLANK([Profit Ratio Target]) || ISBLANK([Profit Ratio]),
+            BLANK(),
+                Arrow & FORMAT(ProfitRatioDifference, "##.##%")
     )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-PR % Difference = 
-VAR CurrentYearPR = 'Sales Measures'[Profit Ratio]
-VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
+Profit Target = ([Profit LY] * 1.2)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Profit Target % Difference = 
+VAR ProfitCY = [Profit CY]
 
 RETURN
-IF(ISBLANK(PriorYearPR), BLANK(),
-    DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
+IF(
+    ISBLANK([Profit Target]), BLANK(),
+        DIVIDE(ProfitCY - [Profit Target], [Profit Target], 0)
 )
----------------------------------------------------------------------------------------------------------------------------------
-Profit % Difference = 
-VAR CurrentYearProfit = SUM('Sales'[Profit])
-VAR PriorYearProfit = 'Sales Measures'[Prior Year Profit]
 
-RETURN
-IF(ISBLANK(PriorYearProfit), BLANK(),
-    DIVIDE(CurrentYearProfit - PriorYearProfit, PriorYearProfit, 0)
-)
 ---------------------------------------------------------------------------------------------------------------------------------
-Profit Difference = 
-VAR CurrentYearProfit = SUM('Sales'[Profit])
-VAR PriorYearProfit = 'Sales Measures'[Prior Year Profit]
+Profit Target Difference = 
+VAR ProfitCY = [Profit CY]
 VAR ProfitDifference =
-    IF(ISBLANK(PriorYearProfit), BLANK(),
-        DIVIDE(CurrentYearProfit - PriorYearProfit, PriorYearProfit, 0)
+    IF(
+        ISBLANK([Profit Target]), BLANK(),
+            DIVIDE(ProfitCY - [Profit Target], [Profit Target], 0)
     )
-VAR DifferenceValue = CurrentYearProfit - PriorYearProfit
+VAR DifferenceValue = ProfitCY - [Profit Target]
 VAR Arrow =
-    IF(ProfitDifference < 0, UNICHAR(9660), IF(ProfitDifference > 0, UNICHAR(9650), ""))
+    IF(
+        ProfitDifference < 0, UNICHAR(9660), IF(ProfitDifference > 0, UNICHAR(9650), "")
+    )
 VAR FormattedDifferenceValue =
-    IF(ISBLANK(CurrentYearProfit) || ISBLANK(PriorYearProfit),
+    IF(ISBLANK([Profit Target]) || ISBLANK(ProfitCY),
         BLANK(),
         IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
     )
+    
 RETURN
-    IF(ISBLANK(CurrentYearProfit) || ISBLANK(PriorYearProfit),
-        BLANK(),
-        Arrow & " " & FORMAT(ProfitDifference, "##.##%") & " | " & FormattedDifferenceValue
-    )
----------------------------------------------------------------------------------------------------------------------------------
-Profit Ratio Difference = 
-VAR CurrentYearPR = 'Sales Measures'[Profit Ratio]
-VAR PriorYearPR = 'Sales Measures'[Prior Year PR]
-VAR PRDifference =
-    IF(ISBLANK(PriorYearPR), BLANK(),
-        DIVIDE(CurrentYearPR - PriorYearPR, PriorYearPR, 0)
-    )
-VAR DifferenceValue = CurrentYearPR - PriorYearPR
-VAR Arrow =
-    IF(PRDifference < 0, UNICHAR(9660), IF(PRDifference > 0, UNICHAR(9650), "")
-    )
-RETURN
-    IF(ISBLANK(CurrentYearPR) || ISBLANK(PriorYearPR),
-        BLANK(),
-        Arrow & "    " & FORMAT(PRDifference, "##.##%")
+    IF(
+        ISBLANK([Profit Target]) || ISBLANK(ProfitCY),
+            BLANK(),
+                FormattedDifferenceValue & " | " & Arrow & FORMAT(ProfitDifference, "##.##%")
     )
 ---------------------------------------------------------------------------------------------------------------------------------
 Sales % Difference = 
-VAR CurrentYearSales = SUM('Sales'[Sales])
-VAR PriorYearSales = 'Sales Measures'[Prior Year Sales]
+VAR SalesCY = [Sales CY]
+VAR SalesLY = [Sales LY]
 
 RETURN
-IF(ISBLANK(PriorYearSales), BLANK(),
-    DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
+IF(ISBLANK(SalesLY), BLANK(),
+    DIVIDE(SalesCY - SalesLY, SalesLY, 0)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
 Sales Difference = 
-VAR CurrentYearSales = SUM('Sales'[Sales])
-VAR PriorYearSales = 'Sales Measures'[Prior Year Sales]
+VAR SalesCY = [Sales CY]
+VAR SalesLY = [Sales LY]
 VAR SalesDifference =
-    IF(ISBLANK(PriorYearSales), BLANK(),
-        DIVIDE(CurrentYearSales - PriorYearSales, PriorYearSales, 0)
+    IF(ISBLANK(SalesLY), BLANK(),
+        DIVIDE(SalesCY - SalesLY, SalesLY, 0)
     )
-VAR DifferenceValue = CurrentYearSales - PriorYearSales
+VAR DifferenceValue = SalesCY - SalesLY
 VAR Arrow =
     IF(SalesDifference < 0, UNICHAR(9660), IF(SalesDifference > 0, UNICHAR(9650), "")
     )
 VAR FormattedDifferenceValue =
-    IF(ISBLANK(CurrentYearSales) || ISBLANK(PriorYearSales),
+    IF(ISBLANK(SalesCY) || ISBLANK(SalesLY),
         BLANK(),
         IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
         )
     )
+    
 RETURN
-    IF(ISBLANK(CurrentYearSales) || ISBLANK(PriorYearSales),
+    IF(ISBLANK(SalesCY) || ISBLANK(SalesLY),
         BLANK(),
-        Arrow & " " & FORMAT(SalesDifference, "##.##%") & " | " & FormattedDifferenceValue
+        FormattedDifferenceValue & " | " & Arrow & FORMAT(SalesDifference, "##.##%")
     )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Shipping Cost % Difference = 
-VAR CurrentYearShippingCost = SUM('Sales'[Shipping Cost])
-VAR PriorYearShippingCost = 'Sales Measures'[Prior Year Shipping Cost]
+Sales Difference Numeric = 
+VAR SalesCY = [Sales CY]
+VAR SalesLY = [Sales LY]
+VAR SalesDifference =
+    IF(ISBLANK(SalesLY), BLANK(),
+        DIVIDE(SalesCY - SalesLY, SalesLY, 0)
+    )
+VAR DifferenceValue = SalesCY - SalesLY
+VAR Arrow =
+    IF(SalesDifference < 0, UNICHAR(9660), IF(SalesDifference > 0, UNICHAR(9650), "")
+    )
+VAR FormattedDifferenceValue =
+    IF(ISBLANK(SalesCY) || ISBLANK(SalesLY),
+        BLANK(),
+        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
+        )
+    )
+    
+RETURN
+    IF(ISBLANK(SalesCY) || ISBLANK(SalesLY),
+        BLANK(),
+        FormattedDifferenceValue & Arrow
+    )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Difference Text = "Sales Δ from LY: " & [Sales Difference]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Target = ([Sales LY] * 1.2)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Target % Difference = 
+VAR SalesCY = [Sales CY]
 
 RETURN
-IF(ISBLANK(PriorYearShippingCost), BLANK(),
-    DIVIDE(CurrentYearShippingCost - PriorYearShippingCost, PriorYearShippingCost, 0)
+IF(
+    ISBLANK([Sales Target]), BLANK(),
+        DIVIDE(SalesCY - [Sales Target], [Sales Target], 0)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Shipping Cost Difference = 
-VAR CurrentYearShippingCost = SUM('Sales'[Shipping Cost])
-VAR PriorYearShippingCost = 'Sales Measures'[Prior Year Shipping Cost]
-VAR ShippingCostDifference =
-    IF(ISBLANK(PriorYearShippingCost), BLANK(),
-        DIVIDE(CurrentYearShippingCost - PriorYearShippingCost, PriorYearShippingCost, 0)
+Sales Target Difference = 
+VAR SalesCY = [Sales CY]
+VAR SalesDifference =
+    IF(
+        ISBLANK([Sales Target]), BLANK(),
+            DIVIDE(SalesCY - [Sales Target], [Sales Target], 0)
     )
-VAR DifferenceValue = CurrentYearShippingCost - PriorYearShippingCost
+VAR DifferenceValue = SalesCY - [Sales Target]
 VAR Arrow =
-    IF(ShippingCostDifference < 0, UNICHAR(9660), IF(ShippingCostDifference > 0, UNICHAR(9650), ""))
+    IF(
+        SalesDifference < 0, UNICHAR(9660), IF(SalesDifference > 0, UNICHAR(9650), "")
+    )
 VAR FormattedDifferenceValue =
-    IF(ISBLANK(CurrentYearShippingCost) || ISBLANK(PriorYearShippingCost),
-        BLANK(),
-        IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
+    IF(
+        ISBLANK([Sales Target]) || ISBLANK(SalesCY),
+            BLANK(),
+                IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
+        )
     )
+    
 RETURN
-    IF(ISBLANK(CurrentYearShippingCost) || ISBLANK(PriorYearShippingCost),
-        BLANK(),
-        Arrow & " " & FORMAT(ShippingCostDifference, "##.##%") & " | " & FormattedDifferenceValue
+    IF(
+        ISBLANK([Sales Target]) || ISBLANK(SalesCY),
+            BLANK(),
+                FormattedDifferenceValue & " | " & Arrow & FORMAT(SalesDifference, "##.##%")
     )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Target Difference Numeric = 
+VAR SalesCY = [Sales CY]
+VAR SalesDifference =
+    IF(
+        ISBLANK([Sales Target]), BLANK(),
+            DIVIDE(SalesCY - [Sales Target], [Sales Target], 0)
+    )
+VAR DifferenceValue = SalesCY - [Sales Target]
+VAR Arrow =
+    IF(
+        SalesDifference < 0, UNICHAR(9660), IF(SalesDifference > 0, UNICHAR(9650), "")
+    )
+VAR FormattedDifferenceValue =
+    IF(
+        ISBLANK([Sales Target]) || ISBLANK(SalesCY),
+            BLANK(),
+                IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
+        )
+    )
+    
+RETURN
+    IF(
+        ISBLANK([Sales Target]) || ISBLANK(SalesCY),
+            BLANK(),
+                FormattedDifferenceValue & Arrow
+    )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Sales Target Difference Text = "Sales Δ vs. Target: " & [Sales Target Difference]
+
 ---------------------------------------------------------------------------------------------------------------------------------
 Units Sold % Difference = 
-VAR CurrentYearUnitsSold = SUM('Sales'[Quantity])
-VAR PriorYearUnitsSold = 'Sales Measures'[Prior Year Units Sold]
+VAR UnitsSoldCY = [Units Sold CY]
+VAR UnitsSoldLY = [Units Sold LY]
 
 RETURN
-IF(ISBLANK(PriorYearUnitsSold), BLANK(),
-    DIVIDE(CurrentYearUnitsSold - PriorYearUnitsSold, PriorYearUnitsSold, 0)
+IF(ISBLANK(UnitsSoldLY), BLANK(),
+    DIVIDE(UnitsSoldCY - UnitsSoldLY, UnitsSoldLY, 0)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
 Units Sold Difference = 
-VAR CurrentYearUnits = SUM('Sales'[Quantity])
-VAR PriorYearUnits = 'Sales Measures'[Prior Year Units Sold]
-VAR UnitsDifference =
-    IF(ISBLANK(PriorYearUnits), BLANK(),
-        DIVIDE(CurrentYearUnits - PriorYearUnits, PriorYearUnits, 0)
+VAR UnitsSoldCY = [Units Sold CY]
+VAR UnitsSoldLY = [Units Sold LY]
+VAR UnitsSoldDifference =
+    IF(ISBLANK(UnitsSoldLY), BLANK(),
+        DIVIDE(UnitsSoldCY - UnitsSoldLY, UnitsSoldLY, 0)
     )
-VAR DifferenceValue = CurrentYearUnits - PriorYearUnits
+VAR DifferenceValue = UnitsSoldCY - UnitsSoldLY
 VAR Arrow =
-    IF(UnitsDifference < 0, UNICHAR(9660), IF(UnitsDifference > 0, UNICHAR(9650), ""))
+    IF(UnitsSoldDifference < 0, UNICHAR(9660), IF(UnitsSoldDifference > 0, UNICHAR(9650), ""))
 VAR FormattedDifferenceValue =
-    IF(ISBLANK(CurrentYearUnits) || ISBLANK(PriorYearUnits),
+    IF(ISBLANK(UnitsSoldCY) || ISBLANK(UnitsSoldLY),
         BLANK(),
         IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0"))
     )
+    
 RETURN
-    IF(ISBLANK(CurrentYearUnits) || ISBLANK(PriorYearUnits),
+    IF(ISBLANK(UnitsSoldCY) || ISBLANK(UnitsSoldLY),
         BLANK(),
-        Arrow & " " & FORMAT(UnitsDifference, "##.##%") & " | " & FormattedDifferenceValue
+        FormattedDifferenceValue & " | " & Arrow & FORMAT(UnitsSoldDifference, "##.##%")
     )
----------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-***Product Metric Selection***
-
-
-
-
 
 ---------------------------------------------------------------------------------------------------------------------------------
-Product Category Comp Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "Trend Comparison by Product Category"
+Units Sold Target = ([Units Sold LY] * 1.2)
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Product Category Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "by Product Category"
----------------------------------------------------------------------------------------------------------------------------------
-Product Category Trend Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "Comparison by Product Category"
----------------------------------------------------------------------------------------------------------------------------------
-Product Name Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "by Product Name"
----------------------------------------------------------------------------------------------------------------------------------
-Product Selection Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "by Product Name"
----------------------------------------------------------------------------------------------------------------------------------
-Product Subcategory Titles = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " " & "by Product Subcategory"
----------------------------------------------------------------------------------------------------------------------------------
-Product Trend Tooltip Title = 
-SELECTEDVALUE(
-    'Product Metric Selection'[Product Metric]
-    ) & " Trend by Month"
----------------------------------------------------------------------------------------------------------------------------------
-Selected Metric = 
-IF (
-    ISCROSSFILTERED('Product Metric Selection'[Product Metric]),
-    SWITCH(
-        SELECTEDVALUE('Product Metric Selection'[Product Metric]),
-        "Sales", SUM('Sales'[Sales]),
-        "Profit", SUM('Sales'[Profit]),
-        "Units Sold", SUM('Sales'[Quantity]),
-        "Avg. Sales", 'Sales Measures'[Avg Sales]
-    ),
-    " "
+Units Sold Target % Difference = 
+VAR UnitsSoldCY = [Units Sold CY]
+
+RETURN
+IF(
+    ISBLANK([Units Sold Target]), BLANK(),
+        DIVIDE(UnitsSoldCY - [Units Sold Target], [Units Sold Target], 0)
 )
+
 ---------------------------------------------------------------------------------------------------------------------------------
-Sort Metric = 
-IF (
-    ISCROSSFILTERED('Product Metric Selection'[Product Metric]),
-    SWITCH(
-        SELECTEDVALUE('Product Metric Selection'[Product Metric]),
-        "Sales", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Sales]), , DESC),
-        "Profit", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Profit]), , DESC),
-        "Units Sold", RANKX(ALL('Product'[Product Name]), SUM('Sales'[Quantity]), , DESC),
-        "Avg. Sales", RANKX(ALL('Product'[Product Name]), 'Sales Measures'[Avg Sales], , DESC)
-    ),
-    BLANK()
+Units Sold Target Difference = 
+VAR UnitsSoldCY = [Units Sold CY]
+VAR UnitsSoldDifference =
+    IF(
+        ISBLANK([Units Sold Target]), BLANK(),
+            DIVIDE(UnitsSoldCY - [Units Sold Target], [Units Sold Target], 0)
+    )
+VAR DifferenceValue = UnitsSoldCY - [Units Sold Target]
+VAR Arrow =
+    IF(
+        UnitsSoldDifference < 0, UNICHAR(9660), IF(UnitsSoldDifference > 0, UNICHAR(9650), "")
+    )
+VAR FormattedDifferenceValue =
+    IF(
+        ISBLANK([Units Sold Target]) || ISBLANK(UnitsSoldCY),
+            BLANK(),
+                IF(DifferenceValue > 0, "+$" & FORMAT(DifferenceValue, "#,##0"), FORMAT(DifferenceValue, "#,##0")
+        )
+    )
+    
+RETURN
+    IF(
+        ISBLANK([Units Sold Target]) || ISBLANK(UnitsSoldCY),
+            BLANK(),
+                FormattedDifferenceValue & " | " & Arrow & FORMAT(UnitsSoldDifference, "##.##%")
+    )
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+****DONUT CHARTS****
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Consumer Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Customer'[Segment] = "Consumer")
 )
+
+---------------------------------------------------------------------------------------------------------------------------------
+Consumer Sales Difference = [Sales CY] - [Consumer Sales]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Corporate Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Customer'[Segment] = "Corporate")
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Corporate Sales Difference = [Sales CY] - [Corporate Sales]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Furniture Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Product'[Category] = "Furniture")
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Furniture Sales Difference = [Sales CY] - [Furniture Sales]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Home Office Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Customer'[Segment] = "Home Office")
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Home Office Sales Difference = [Sales CY] - [Home Office Sales]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Office Sales Difference = [Sales CY] - [Office Supplies Sales]
+
+---------------------------------------------------------------------------------------------------------------------------------
+Office Supplies Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Product'[Category] = "Office Supplies")
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Technology Sales = 
+CALCULATE(
+    [Sales CY],
+        KEEPFILTERS('Product'[Category] = "Technology")
+)
+
+---------------------------------------------------------------------------------------------------------------------------------
+Technology Sales Difference = [Sales CY] - [Technology Sales]
+
 ---------------------------------------------------------------------------------------------------------------------------------
